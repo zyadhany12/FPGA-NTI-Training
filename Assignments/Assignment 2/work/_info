@@ -1,0 +1,56 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/HP/Desktop/NTI Training/FPGA Work/Assignments/Assignment 2
+vFirst_reset_sync
+!s110 1788411830
+!i10b 1
+!s100 aD87h9Q;UnoA_Nig;Ijhf1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+If`CTTM_be]mUbo`B5A5T<2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1788411824
+8./part1_task3.v
+F./part1_task3.v
+!i122 0
+L0 1 32
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1788411830.000000
+!s107 ./part1_task3.v|
+!s90 ./part1_task3.v|
+!i113 1
+Z4 tCvgOpt 0
+n@first_reset_sync
+vlexical_demo
+!s110 1788419227
+!i10b 1
+!s100 1X?L>Mo:nP7DK^^V@i>CO3
+R1
+IF_Z03K8[Ba_zThm8B[?Oj1
+R2
+R0
+w1788419224
+8./part3.v
+F./part3.v
+!i122 1
+L0 2 43
+R3
+r1
+!s85 0
+31
+!s108 1788419227.000000
+!s107 ./part3.v|
+!s90 ./part3.v|
+!i113 1
+R4

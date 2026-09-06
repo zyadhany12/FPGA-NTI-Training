@@ -1,0 +1,58 @@
+Part 1:
+
+1.
+    - as technology advances the sizes of the components, transistors and even the number of used components increase making it impossible to       understand complex desings. so making the designs by hand would be extremely hard if not impossible, HDL fixed this issue by instead of          wiring complex desings by hand we can just right plain text which describe the behaviour of that circuit while providing simulation options.
+
+2.
+    - HDL differs from programming languages (ex. C, C++, Java) as HDL is a language that describes Hardware design, while programming languages       are used to create programs and functionalities. In programming the compilers work in one of the two ways either top to bottom compiling by       handling each line seperately from top to bot, or they merge all the code in one singular line then compile it all at once.
+
+3.
+    - the two languages were Verilog and System Verilog, Verilog was the base to HDL which was used in RTL logic, while, System verilog was used        in verification, adding programming features (ex. OOP) and something called constrained testing. those two languages were merged to be       called what we call now System Verilog which compines both features in one environment which is usefull as the developers do not have to       deal with file fragmentation, different syntaxes and merging the verification and the development environment for seamless development.
+
+
+
+
+Part 2:
+
+1.
+     - Strtuctural Domain, Behavioural Domain, Physical Domain.
+
+
+2. 
+     - Mostly because RTL provides info about Timers/Clock, Flip-Flops, memory and logic gates to provide an accurate netlist files that explains        data flow/path in the system.
+
+3.    
+     - Behavioural Level: it focuses on the main functionality of the system not the implementation, and uses keywords such as "Initial", " C            Code", "wait" and "delay" this level is mostly used in testbenches and simulation environments and its not synthesizable.
+
+     - RTL: it focuses of data transfer/flow through the system on clock edges, it uses keywords such as "always(@posedge)", "non-blocking               assignments" and "blocking assigements" and its synthesizable, and its mostly used in Design process.
+
+     - Structural Level:it focuses on the hierarchy of the components of the system, uses keywords such as "instantiations" , "wire" and "reg",          its used in system integration.and its considered the easiest to synthesizable.
+
+     - Gate Level: it focuses on describing the physical connection of the system. uses keywords such as premitives, delays, netlist files.
+       its used in post synthesis verification. this stage uses the result of the synthesis (netlist) so normally you do not synthesize it but
+       it is possible.
+
+
+
+
+
+
+
+
+Part 3:
+
+	Full Adder => A (XOR) B (XOR) Cin
+	Cout	   => (A . B) + (Cin . (A (XOR) B))
+
+
+
+
+
+
+
+
+
+
+
+
+ 

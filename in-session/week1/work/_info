@@ -1,0 +1,371 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/HP/Desktop/NTI Training/FPGA Work/Simulation
+vALU
+Z1 !s110 1788466687
+!i10b 1
+!s100 VOL;4m>3[]o]jZ7HWmCLn3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?>d]jUd3aWaBiT?WKj1fh3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1788466678
+Z5 8ALU.v
+Z6 FALU.v
+!i122 24
+Z7 L0 1 27
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1788466687.000000
+Z10 !s107 ALU.v|
+Z11 !s90 ALU.v|
+!i113 1
+Z12 tCvgOpt 0
+n@a@l@u
+vdecoder
+Z13 !s110 1788722010
+!i10b 1
+!s100 VW6fWZ]EN=OhcOng84G840
+R2
+IDJF>TTfcRLJ=l;OS6:THW2
+R3
+R0
+Z14 w1788722006
+Z15 8./decoder.v
+Z16 F./decoder.v
+!i122 44
+L0 1 13
+R8
+r1
+!s85 0
+31
+Z17 !s108 1788722009.000000
+Z18 !s107 ./decoder.v|
+Z19 !s90 ./decoder.v|
+!i113 1
+R12
+vencoder
+Z20 !s110 1788724584
+!i10b 1
+!s100 8ngYme=`jne?13K<ZH?>W0
+R2
+IJ9mC2ZOEWb=AkQUXzJgUo3
+R3
+R0
+Z21 w1788724580
+Z22 8./encoder.v
+Z23 F./encoder.v
+!i122 69
+L0 1 30
+R8
+r1
+!s85 0
+31
+Z24 !s108 1788724584.000000
+!s107 ./encoder.v|
+Z25 !s90 ./encoder.v|
+!i113 1
+R12
+vFull_Adder
+Z26 !s110 1788320960
+!i10b 1
+!s100 7S[>YGki4[H[:;E1@MaiE1
+R2
+IdJfoLYc@EX`ZFf9?cZ1aS1
+R3
+R0
+Z27 w1788320939
+Z28 8./Assignment1.v
+Z29 F./Assignment1.v
+!i122 9
+L0 35 27
+R8
+r1
+!s85 0
+31
+Z30 !s108 1788320960.000000
+Z31 !s107 ./Assignment1.v|
+Z32 !s90 ./Assignment1.v|
+!i113 1
+R12
+n@full_@adder
+vfulladder_behavlevel
+Z33 !s110 1788714398
+!i10b 1
+!s100 KOa:n8l@;H?K^P_^^[Ib41
+R2
+I=fWz`SO4JCOgYA[3MPN0l2
+R3
+R0
+Z34 w1788714394
+Z35 8./FullAdder.v
+Z36 F./FullAdder.v
+!i122 32
+L0 59 12
+R8
+r1
+!s85 0
+31
+Z37 !s108 1788714398.000000
+Z38 !s107 ./FullAdder.v|
+Z39 !s90 ./FullAdder.v|
+!i113 1
+R12
+vfulladder_gatelevel
+R33
+!i10b 1
+!s100 74;?QViQ]`CUd0;nhCoLF1
+R2
+InzkUhdaAl3Hm:GFA`Abmj0
+R3
+R0
+R34
+R35
+R36
+!i122 32
+L0 1 14
+R8
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 1
+R12
+vfulladder_structlevel
+R33
+!i10b 1
+!s100 F>;`MDn2>;zD18ZX6`gKO3
+R2
+IB];DT23A6RY1J[BOVa:3H3
+R3
+R0
+R34
+R35
+R36
+!i122 32
+L0 29 28
+R8
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 1
+R12
+vHalf_Adder
+R33
+!i10b 1
+!s100 kBbeT[SDC=0:W?hPVlYh<3
+R2
+ID1>g5bB9l=Mk1EG[RhaM91
+R3
+R0
+R34
+R35
+R36
+!i122 32
+L0 19 10
+R8
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 1
+R12
+n@half_@adder
+vRAM
+Z40 !s110 1788386470
+!i10b 1
+!s100 Ge>k2_=kPFNKe@F^QJE8Z3
+R2
+IS5Xm[^[NSPK4YULZd;fHX3
+R3
+R0
+Z41 w1788386460
+Z42 8./ram.v
+Z43 F./ram.v
+!i122 19
+R7
+R8
+r1
+!s85 0
+31
+Z44 !s108 1788386469.000000
+Z45 !s107 ./ram.v|
+Z46 !s90 ./ram.v|
+!i113 1
+R12
+n@r@a@m
+vRAM_tp
+!s110 1788383840
+!i10b 1
+!s100 71[1HB;HZYFAXA7Fa_]BP1
+R2
+IeV25?J91PN]`MDdlSEWm=3
+R3
+R0
+w1788383751
+R42
+R43
+!i122 14
+L0 29 31
+R8
+r1
+!s85 0
+31
+!s108 1788383840.000000
+R45
+R46
+!i113 1
+R12
+n@r@a@m_tp
+vtb_ALU
+R1
+!i10b 1
+!s100 bD9A`F3TfRW7S6>0aPzWH0
+R2
+IDUj=[JPJRWQdR4>_zNJR81
+R3
+R0
+R4
+R5
+R6
+!i122 24
+L0 31 47
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+ntb_@a@l@u
+vtb_decoder
+R13
+!i10b 1
+!s100 H]c8GIi@zH^06RiK<_1R91
+R2
+IE8ESZAXm4AH_;enn3kmRU0
+R3
+R0
+R14
+R15
+R16
+!i122 44
+L0 17 38
+R8
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R12
+vtb_encoder
+R20
+!i10b 1
+!s100 ZOGA88M^cHRMBS1c>_e0c3
+R2
+I^M58@dBGga2jobM9R7bml3
+R3
+R0
+R21
+R22
+R23
+!i122 69
+L0 34 44
+R8
+r1
+!s85 0
+31
+R24
+Z47 !s107 ./encoder.v|
+R25
+!i113 1
+R12
+vtb_Full_Adder
+R26
+!i10b 1
+!s100 mK=<NlLo`e:5P2Kzz5E2e2
+R2
+IRNMnEGFKBgOn:J;UB@RTk3
+R3
+R0
+R27
+R28
+R29
+!i122 9
+L0 79 39
+R8
+r1
+!s85 0
+31
+R30
+R31
+R32
+!i113 1
+R12
+ntb_@full_@adder
+vtb_fulladder
+R33
+!i10b 1
+!s100 1EJZ2A1I0z0mWIhf=>SkT2
+R2
+I^CUG:zcRXRlZg[E0N?6JP1
+R3
+R0
+R34
+R35
+R36
+!i122 32
+L0 75 64
+R8
+r1
+!s85 0
+31
+R37
+R38
+R39
+!i113 1
+R12
+vtb_RAM
+R40
+!i10b 1
+!s100 mj8zJ6?cEPh^neIhk?6Y?2
+R2
+I:RK@Z5JPEKdX;e5Xhc_2@1
+R3
+R0
+R41
+R42
+R43
+!i122 19
+L0 29 51
+R8
+r1
+!s85 0
+31
+R44
+R45
+R46
+!i113 1
+R12
+ntb_@r@a@m

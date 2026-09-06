@@ -1,0 +1,20 @@
+# vsim tb_Data_Scramble 
+# Start time: 18:36:35 on Sep 05,2026
+# Loading work.tb_Data_Scramble
+# Loading work.Data_Scramble
+add wave -position insertpoint sim:/tb_Data_Scramble/*
+run -all
+# Sleep=1 | OpMode=11 | DataIn=11111111 | Key=10 || Out=00000000 | ParErr=0 | isZero=0
+# Sleep=0 | OpMode=11 | DataIn=11111111 | Key=10 || Out=11111111 | ParErr=1 | isZero=0
+# Sleep=0 | OpMode=00 | DataIn=10100100 | Key=10 || Out=10100100 | ParErr=0 | isZero=0
+# Sleep=0 | OpMode=01 | DataIn=11001100 | Key=10 || Out=01100110 | ParErr=1 | isZero=0
+# Sleep=0 | OpMode=01 | DataIn=10110100 | Key=10 || Out=00011110 | ParErr=1 | isZero=0
+# Sleep=0 | OpMode=10 | DataIn=01110100 | Key=10 || Out=00110100 | ParErr=1 | isZero=0
+# Sleep=0 | OpMode=11 | DataIn=11010000 | Key=10 || Out=00001101 | ParErr=0 | isZero=0
+# Sleep=0 | OpMode=00 | DataIn=00000000 | Key=10 || Out=00000000 | ParErr=1 | isZero=1
+# ** Note: $finish    : ./Part3.v(96)
+#    Time: 80 ps  Iteration: 0  Instance: /tb_Data_Scramble
+# 1
+# Break in Module tb_Data_Scramble at ./Part3.v line 96
+# End time: 18:38:40 on Sep 05,2026, Elapsed time: 0:02:05
+# Errors: 0, Warnings: 0

@@ -1,0 +1,13 @@
+1- valid (start with A-Z char)
+2- invalid (cannot start the var name with a $)
+3- valid (start with _ )
+4- valid (no issue + '\')
+5- invalid ('-' hyphens are not acceptable)
+6- invalid (same as 5)
+7- invalid (keyword)
+8- valid (normal naming)
+9- valid ('\')
+10- invalid (start with a num)
+11- valid (escape operator)
+12- invalid (start with a '$')
+13- DATA  and data are two different variables as verilog is a case sensitive language.

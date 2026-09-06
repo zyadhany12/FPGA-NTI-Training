@@ -1,0 +1,10 @@
+# vsim -c lexical_demo 
+# Start time: 10:09:48 on Sep 03,2026
+# Loading work.lexical_demo
+# --- Lexical Conventions Output ---
+# String Value: Hello World
+# Data Value: aa || data value: xx || Mixed logic: 1010xxxxzzzz || Analog Voltage: 0.003300
+# ** Note: $finish    : ./part3.v(44)
+#    Time: 0 ps  Iteration: 0  Instance: /lexical_demo
+# End time: 10:09:52 on Sep 03,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
