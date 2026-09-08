@@ -1,0 +1,101 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/HP/Desktop/NTI Training/FPGA Work/in-session/Week 2/Day 7
+vclk_divider
+Z1 !s110 1788882066
+!i10b 1
+!s100 Q1RK8iaLIA2UgmLImW2mP2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ICR1ZMZO?AENEU:0X<LOFB0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1788881934
+Z5 8./clockdivider.v
+Z6 F./clockdivider.v
+!i122 22
+L0 1 30
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1788882065.000000
+!s107 ./clockdivider.v|
+Z9 !s90 ./clockdivider.v|
+!i113 1
+Z10 tCvgOpt 0
+vclk_divider_tb
+R1
+!i10b 1
+!s100 Sn[PaKcUbAWIGAaAcVnM`2
+R2
+I>HmlCWOz@QlX]USIBemzG3
+R3
+R0
+R4
+R5
+R6
+!i122 22
+L0 34 33
+R7
+r1
+!s85 0
+31
+R8
+Z11 !s107 ./clockdivider.v|
+R9
+!i113 1
+R10
+vlightChaser
+Z12 !s110 1788829033
+!i10b 1
+!s100 _5>h=dJafMYCV[=E@9z>]0
+R2
+IhVEJ=jA^U;YZ_oYYm5KkU2
+R3
+R0
+Z13 w1788829002
+Z14 8./lightChaser.v
+Z15 F./lightChaser.v
+!i122 10
+L0 6 29
+R7
+r1
+!s85 0
+31
+Z16 !s108 1788829033.000000
+Z17 !s107 ./lightChaser.v|
+Z18 !s90 ./lightChaser.v|
+!i113 1
+R10
+nlight@chaser
+vlightChaser_tb
+R12
+!i10b 1
+!s100 cB`EMD^_NH<W1lD0iIa_B3
+R2
+Ih1WA`?Jh0g<Y=`<WlN:j^3
+R3
+R0
+R13
+R14
+R15
+!i122 10
+L0 36 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+nlight@chaser_tb
