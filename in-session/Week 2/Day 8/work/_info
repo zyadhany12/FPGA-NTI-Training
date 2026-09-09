@@ -1,0 +1,187 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/HP/Desktop/NTI Training/FPGA Work/in-session/Week 2/Day 8
+valu
+Z1 !s110 1788899669
+!i10b 1
+!s100 j@Ek]g_^@zC>Gg0_o<?541
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ii_lZ``T[OiFYlETV@0jfl3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1788899666
+Z5 8./alu_test.v
+Z6 F./alu_test.v
+!i122 15
+L0 1 28
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1788899669.000000
+Z9 !s107 ./alu_test.v|
+Z10 !s90 ./alu_test.v|
+!i113 1
+Z11 tCvgOpt 0
+valu_test
+R1
+!i10b 1
+!s100 e;8JnbFeN0JW7ZE=6H;^R0
+R2
+I7I:]See5=WVLbOcb]8oOc3
+R3
+R0
+R4
+R5
+R6
+!i122 15
+L0 32 61
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+vcontroller
+Z12 !s110 1788919908
+!i10b 1
+!s100 6ed3b]^U2_Hd6WBYiaNo=2
+R2
+I73MY_5b3C0;M4_nHU;la13
+R3
+R0
+Z13 w1788919900
+Z14 8./controller.v
+Z15 F./controller.v
+!i122 16
+L0 1 54
+R7
+r1
+!s85 0
+31
+Z16 !s108 1788919908.000000
+!s107 ./controller.v|
+Z17 !s90 ./controller.v|
+!i113 1
+R11
+vcontroller_test
+R12
+!i10b 1
+!s100 46Od`F]]?FWG@H>_dJKl?0
+R2
+I;EAgjXg3o5kJWGQ3P4Ez_3
+R3
+R0
+R13
+R14
+R15
+!i122 16
+L0 56 145
+R7
+r1
+!s85 0
+31
+R16
+Z18 !s107 ./controller.v|
+R17
+!i113 1
+R11
+vdriver
+Z19 !s110 1788897416
+!i10b 1
+!s100 Af]nzcPSNWn6D[YL6Xnk]3
+R2
+Ii^zVC3`<:J`cCk<j`aCf`0
+R3
+R0
+Z20 w1788897411
+Z21 8./driver_test.v
+Z22 F./driver_test.v
+!i122 1
+L0 1 27
+R7
+r1
+!s85 0
+31
+Z23 !s108 1788897415.000000
+Z24 !s107 ./driver_test.v|
+Z25 !s90 ./driver_test.v|
+!i113 1
+R11
+vdriver_test
+R19
+!i10b 1
+!s100 IUdd:<C57<GIeK0VD[a;81
+R2
+Ij^5a;NY:PgD`DF6;hHd5I0
+R3
+R0
+R20
+R21
+R22
+!i122 1
+L0 29 43
+R7
+r1
+!s85 0
+31
+R23
+R24
+R25
+!i113 1
+R11
+vmultiplexor
+Z26 !s110 1788898513
+!i10b 1
+!s100 NKb0MH@6S>i9K3ESQQc0E0
+R2
+INT7_[k;7][5bDmRkPoUeE2
+R3
+R0
+Z27 w1788898512
+Z28 8./multiplexor_test.v
+Z29 F./multiplexor_test.v
+!i122 9
+L0 1 23
+R7
+r1
+!s85 0
+31
+Z30 !s108 1788898513.000000
+Z31 !s107 ./multiplexor_test.v|
+Z32 !s90 ./multiplexor_test.v|
+!i113 1
+R11
+vmultiplexor_test
+R26
+!i10b 1
+!s100 EclE]VYVXIO9KU3D4KiV@0
+R2
+InLWNbzOAV90T2HgYzkmYQ0
+R3
+R0
+R27
+R28
+R29
+!i122 9
+L0 26 46
+R7
+r1
+!s85 0
+31
+R30
+R31
+R32
+!i113 1
+R11

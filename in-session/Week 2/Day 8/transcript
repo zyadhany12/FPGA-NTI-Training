@@ -1,0 +1,21 @@
+# vsim controller_test 
+# Start time: 05:13:28 on Sep 09,2026
+# Loading work.controller_test
+# Loading work.controller
+add wave -position insertpoint sim:/controller_test/*
+run -all
+# Testing opcode HLT phase 0 1 2 3 4 5 6 7
+# Testing opcode SKZ phase 0 1 2 3 4 5 6 7
+# Testing opcode ADD phase 0 1 2 3 4 5 6 7
+# Testing opcode AND phase 0 1 2 3 4 5 6 7
+# Testing opcode XOR phase 0 1 2 3 4 5 6 7
+# Testing opcode LDA phase 0 1 2 3 4 5 6 7
+# Testing opcode STO phase 0 1 2 3 4 5 6 7
+# Testing opcode JMP phase 0 1 2 3 4 5 6 7
+# TEST PASSED
+# ** Note: $finish    : ./controller.v(197)
+#    Time: 65 ps  Iteration: 0  Instance: /controller_test
+# 1
+# Break in Module controller_test at ./controller.v line 197
+# End time: 05:20:47 on Sep 09,2026, Elapsed time: 0:07:19
+# Errors: 0, Warnings: 0
