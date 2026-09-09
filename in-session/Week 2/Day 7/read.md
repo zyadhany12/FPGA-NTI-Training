@@ -1,21 +1,21 @@
-##Controller Data:
+#Controller Data:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f198b6dd-639b-42c0-bdf5-53c3e74523d8" />
 Transcribt:
-# vsim -c controller_test 
-# Start time: 05:12:08 on Sep 09,2026
-# Loading work.controller_test
-# Loading work.controller
-# Testing opcode HLT phase 0 1 2 3 4 5 6 7
-# Testing opcode SKZ phase 0 1 2 3 4 5 6 7
-# Testing opcode ADD phase 0 1 2 3 4 5 6 7
-# Testing opcode AND phase 0 1 2 3 4 5 6 7
-# Testing opcode XOR phase 0 1 2 3 4 5 6 7
-# Testing opcode LDA phase 0 1 2 3 4 5 6 7
-# Testing opcode STO phase 0 1 2 3 4 5 6 7
-# Testing opcode JMP phase 0 1 2 3 4 5 6 7
-# TEST PASSED
-# ** Note: $finish    : ./controller.v(197)
-#    Time: 65 ps  Iteration: 0  Instance: /controller_test
-# End time: 05:12:10 on Sep 09,2026, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0
+vsim -c controller_test 
+Start time: 05:12:08 on Sep 09,2026
+Loading work.controller_test
+Loading work.controller
+Testing opcode HLT phase 0 1 2 3 4 5 6 7
+Testing opcode SKZ phase 0 1 2 3 4 5 6 7
+Testing opcode ADD phase 0 1 2 3 4 5 6 7
+Testing opcode AND phase 0 1 2 3 4 5 6 7
+Testing opcode XOR phase 0 1 2 3 4 5 6 7
+Testing opcode LDA phase 0 1 2 3 4 5 6 7
+Testing opcode STO phase 0 1 2 3 4 5 6 7
+Testing opcode JMP phase 0 1 2 3 4 5 6 7
+TEST PASSED
+** Note: $finish    : ./controller.v(197)
+Time: 65 ps  Iteration: 0  Instance: /controller_test
+End time: 05:12:10 on Sep 09,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
 
