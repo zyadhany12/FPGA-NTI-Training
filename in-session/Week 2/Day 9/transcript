@@ -1,0 +1,24 @@
+# vsim Rising_Detector_tb 
+# Start time: 10:43:34 on Sep 10,2026
+# Loading work.Rising_Detector_tb
+# Loading work.Rising_Detector
+add wave -position insertpoint sim:/Rising_Detector_tb/*
+run -all
+# Time: 0 || Level: 0 || rst: 0 || Moore_Value: 0 || Mealy: 0
+# Time: 15000 || Level: 0 || rst: 1 || Moore_Value: 0 || Mealy: 0
+# Time: 100000 || Level: 1 || rst: 1 || Moore_Value: 0 || Mealy: 1
+# Time: 105000 || Level: 1 || rst: 1 || Moore_Value: 1 || Mealy: 0
+# Time: 200000 || Level: 0 || rst: 1 || Moore_Value: 1 || Mealy: 0
+# Time: 205000 || Level: 0 || rst: 1 || Moore_Value: 0 || Mealy: 0
+# Time: 300000 || Level: 1 || rst: 1 || Moore_Value: 0 || Mealy: 1
+# Time: 305000 || Level: 1 || rst: 1 || Moore_Value: 1 || Mealy: 0
+# Time: 400000 || Level: 0 || rst: 1 || Moore_Value: 1 || Mealy: 0
+# Time: 405000 || Level: 0 || rst: 1 || Moore_Value: 0 || Mealy: 0
+# Time: 500000 || Level: 1 || rst: 1 || Moore_Value: 0 || Mealy: 1
+# Time: 505000 || Level: 1 || rst: 1 || Moore_Value: 1 || Mealy: 0
+# ** Note: $finish    : ./Rising_edge.v(95)
+#    Time: 515 ns  Iteration: 0  Instance: /Rising_Detector_tb
+# 1
+# Break in Module Rising_Detector_tb at ./Rising_edge.v line 95
+# End time: 10:44:12 on Sep 10,2026, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 0

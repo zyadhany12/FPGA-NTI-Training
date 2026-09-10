@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/HP/Desktop/NTI Training/FPGA Work/in-session/Week 2/Day 9
+vRising_Detector
+Z1 !s110 1789026282
+!i10b 1
+!s100 ;?;@O>;MnV6i][<@^ekE>1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IUb^Jn0dAkINV3@dERoCV33
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1789026268
+Z5 8./Rising_edge.v
+Z6 F./Rising_edge.v
+!i122 16
+L0 2 66
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1789026282.000000
+!s107 ./Rising_edge.v|
+Z9 !s90 ./Rising_edge.v|
+!i113 1
+Z10 tCvgOpt 0
+n@rising_@detector
+vRising_Detector_tb
+R1
+!i10b 1
+!s100 1L7M>j7B4ZS@S:=fhhI2?1
+R2
+I]J0DD@?De?86z_9MBP_TC2
+R3
+R0
+R4
+R5
+R6
+!i122 16
+L0 70 28
+R7
+r1
+!s85 0
+31
+R8
+Z11 !s107 ./Rising_edge.v|
+R9
+!i113 1
+R10
+n@rising_@detector_tb
