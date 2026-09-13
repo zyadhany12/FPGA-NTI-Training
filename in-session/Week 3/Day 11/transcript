@@ -1,0 +1,20 @@
+# vsim -c overlapping_tb 
+# Start time: 05:36:24 on Sep 13,2026
+# Loading work.overlapping_tb
+# Loading work.overlapping
+# Time: 15    || Serial_In: 0 || moore_Sequence: 0 || Mealy_Sequence: 0 || moore_counter: 0 || mealy_counter: 0 
+# Time: 25    || Serial_In: 1 || moore_Sequence: 0 || Mealy_Sequence: 0 || moore_counter: 0 || mealy_counter: 0 
+# Time: 45    || Serial_In: 0 || moore_Sequence: 0 || Mealy_Sequence: 0 || moore_counter: 0 || mealy_counter: 0 
+# Time: 55    || Serial_In: 1 || moore_Sequence: 0 || Mealy_Sequence: 0 || moore_counter: 0 || mealy_counter: 0 
+# Time: 65    || Serial_In: 0 || moore_Sequence: 0 || Mealy_Sequence: 0 || moore_counter: 0 || mealy_counter: 0 
+# Time: 75    || Serial_In: 1 || moore_Sequence: 0 || Mealy_Sequence: 1 || moore_counter: 0 || mealy_counter: 1 
+# Time: 85    || Serial_In: 1 || moore_Sequence: 1 || Mealy_Sequence: 1 || moore_counter: 1 || mealy_counter: 1 
+# Time: 105    || Serial_In: 0 || moore_Sequence: 1 || Mealy_Sequence: 1 || moore_counter: 1 || mealy_counter: 1 
+# Time: 115    || Serial_In: 1 || moore_Sequence: 1 || Mealy_Sequence: 1 || moore_counter: 1 || mealy_counter: 1 
+# Time: 125    || Serial_In: 0 || moore_Sequence: 1 || Mealy_Sequence: 1 || moore_counter: 1 || mealy_counter: 1 
+# Time: 135    || Serial_In: 1 || moore_Sequence: 1 || Mealy_Sequence: 1 || moore_counter: 1 || mealy_counter: 1 
+# Time: 145    || Serial_In: 1 || moore_Sequence: 1 || Mealy_Sequence: 1 || moore_counter: 2 || mealy_counter: 1 
+# ** Note: $finish    : Overlapping.v(125)
+#    Time: 165 ps  Iteration: 0  Instance: /overlapping_tb
+# End time: 05:36:26 on Sep 13,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
