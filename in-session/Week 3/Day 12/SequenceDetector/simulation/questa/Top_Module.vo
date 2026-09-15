@@ -1,0 +1,1787 @@
+// Copyright (C) 2025  Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Altera and sold by Altera or its authorized distributors.  Please
+// refer to the Altera Software License Subscription Agreements 
+// on the Quartus Prime software download page.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition"
+
+// DATE "09/15/2026 07:18:02"
+
+// 
+// Device: Altera 5CGXFC7C7F23C8 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for QuestaSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Top_Module (
+	clk,
+	Serial_input,
+	rst,
+	moore_Sequence_overlap,
+	mealy_Sequence_overlap,
+	moore_counter_overlap,
+	mealy_counter_overlap,
+	moore_Sequence_nonoverlap,
+	mealy_Sequence_nonoverlap);
+input 	clk;
+input 	Serial_input;
+input 	rst;
+output 	moore_Sequence_overlap;
+output 	mealy_Sequence_overlap;
+output 	[2:0] moore_counter_overlap;
+output 	[2:0] mealy_counter_overlap;
+output 	moore_Sequence_nonoverlap;
+output 	mealy_Sequence_nonoverlap;
+
+// Design Ports Information
+// moore_Sequence_overlap	=>  Location: PIN_L22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// mealy_Sequence_overlap	=>  Location: PIN_M20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// moore_counter_overlap[0]	=>  Location: PIN_N19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// moore_counter_overlap[1]	=>  Location: PIN_M18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// moore_counter_overlap[2]	=>  Location: PIN_M22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// mealy_counter_overlap[0]	=>  Location: PIN_L17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// mealy_counter_overlap[1]	=>  Location: PIN_M21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// mealy_counter_overlap[2]	=>  Location: PIN_K17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// moore_Sequence_nonoverlap	=>  Location: PIN_N16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// mealy_Sequence_nonoverlap	=>  Location: PIN_L19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Serial_input	=>  Location: PIN_N21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_M16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// rst	=>  Location: PIN_L18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \clk~input_o ;
+wire \clk~inputCLKENA0_outclk ;
+wire \Serial_input~input_o ;
+wire \overlap_inst|Selector0~0_combout ;
+wire \rst~input_o ;
+wire \overlap_inst|moore_current_state.start~q ;
+wire \overlap_inst|moore_next_state.First~0_combout ;
+wire \overlap_inst|moore_current_state.First~q ;
+wire \overlap_inst|WideOr0~0_combout ;
+wire \overlap_inst|moore_current_state.Second~q ;
+wire \overlap_inst|moore_next_state.Third~0_combout ;
+wire \overlap_inst|moore_current_state.Third~q ;
+wire \overlap_inst|WideOr1~0_combout ;
+wire \overlap_inst|moore_current_state.Fourth~q ;
+wire \overlap_inst|moore_next_state.Fifth~0_combout ;
+wire \overlap_inst|moore_current_state.Fifth~q ;
+wire \overlap_inst|moore_next_state.Sixth~0_combout ;
+wire \overlap_inst|moore_current_state.Sixth~q ;
+wire \overlap_inst|Selector3~0_combout ;
+wire \overlap_inst|mealy_current_state.start~q ;
+wire \overlap_inst|Selector5~0_combout ;
+wire \overlap_inst|mealy_current_state.Second~q ;
+wire \overlap_inst|mealy_next_state.Third~0_combout ;
+wire \overlap_inst|mealy_current_state.Third~q ;
+wire \overlap_inst|mealy_next_state.Fourth~0_combout ;
+wire \overlap_inst|mealy_current_state.Fourth~q ;
+wire \overlap_inst|mealy_next_state.Fifth~0_combout ;
+wire \overlap_inst|mealy_current_state.Fifth~q ;
+wire \overlap_inst|mealy_Sequence_detector~combout ;
+wire \overlap_inst|moore_counter[0]~0_combout ;
+wire \overlap_inst|moore_counter[0]~DUPLICATE_q ;
+wire \overlap_inst|moore_counter[1]~1_combout ;
+wire \overlap_inst|moore_counter[2]~2_combout ;
+wire \overlap_inst|mealy_counter[0]~0_combout ;
+wire \overlap_inst|mealy_counter[1]~1_combout ;
+wire \overlap_inst|mealy_counter[2]~2_combout ;
+wire \nonoverlap_inst|Selector0~0_combout ;
+wire \nonoverlap_inst|moore_current_state.start~q ;
+wire \nonoverlap_inst|moore_next_state.First~0_combout ;
+wire \nonoverlap_inst|moore_current_state.First~q ;
+wire \nonoverlap_inst|WideOr0~0_combout ;
+wire \nonoverlap_inst|moore_current_state.Second~q ;
+wire \nonoverlap_inst|moore_next_state.Third~0_combout ;
+wire \nonoverlap_inst|moore_current_state.Third~q ;
+wire \nonoverlap_inst|moore_next_state.Fourth~0_combout ;
+wire \nonoverlap_inst|moore_current_state.Fourth~q ;
+wire \nonoverlap_inst|moore_next_state.Fifth~0_combout ;
+wire \nonoverlap_inst|moore_current_state.Fifth~q ;
+wire \nonoverlap_inst|moore_next_state.Sixth~0_combout ;
+wire \nonoverlap_inst|moore_current_state.Sixth~q ;
+wire \nonoverlap_inst|mealy_next_state.First~0_combout ;
+wire \nonoverlap_inst|mealy_current_state.First~q ;
+wire \nonoverlap_inst|Selector2~0_combout ;
+wire \nonoverlap_inst|mealy_current_state.start~q ;
+wire \nonoverlap_inst|Selector3~0_combout ;
+wire \nonoverlap_inst|mealy_current_state.Second~q ;
+wire \nonoverlap_inst|mealy_next_state.Third~0_combout ;
+wire \nonoverlap_inst|mealy_current_state.Third~q ;
+wire \nonoverlap_inst|mealy_next_state.Fourth~0_combout ;
+wire \nonoverlap_inst|mealy_current_state.Fourth~q ;
+wire \nonoverlap_inst|mealy_next_state.Fifth~0_combout ;
+wire \nonoverlap_inst|mealy_current_state.Fifth~q ;
+wire \nonoverlap_inst|mealy_Sequence_detector~combout ;
+wire [2:0] \overlap_inst|moore_counter ;
+wire [2:0] \overlap_inst|mealy_counter ;
+
+
+// Location: IOOBUF_X89_Y36_N56
+cyclonev_io_obuf \moore_Sequence_overlap~output (
+	.i(\overlap_inst|moore_current_state.Sixth~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(moore_Sequence_overlap),
+	.obar());
+// synopsys translate_off
+defparam \moore_Sequence_overlap~output .bus_hold = "false";
+defparam \moore_Sequence_overlap~output .open_drain_output = "false";
+defparam \moore_Sequence_overlap~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y37_N39
+cyclonev_io_obuf \mealy_Sequence_overlap~output (
+	.i(\overlap_inst|mealy_Sequence_detector~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(mealy_Sequence_overlap),
+	.obar());
+// synopsys translate_off
+defparam \mealy_Sequence_overlap~output .bus_hold = "false";
+defparam \mealy_Sequence_overlap~output .open_drain_output = "false";
+defparam \mealy_Sequence_overlap~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y36_N5
+cyclonev_io_obuf \moore_counter_overlap[0]~output (
+	.i(\overlap_inst|moore_counter[0]~DUPLICATE_q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(moore_counter_overlap[0]),
+	.obar());
+// synopsys translate_off
+defparam \moore_counter_overlap[0]~output .bus_hold = "false";
+defparam \moore_counter_overlap[0]~output .open_drain_output = "false";
+defparam \moore_counter_overlap[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y36_N22
+cyclonev_io_obuf \moore_counter_overlap[1]~output (
+	.i(\overlap_inst|moore_counter [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(moore_counter_overlap[1]),
+	.obar());
+// synopsys translate_off
+defparam \moore_counter_overlap[1]~output .bus_hold = "false";
+defparam \moore_counter_overlap[1]~output .open_drain_output = "false";
+defparam \moore_counter_overlap[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y36_N39
+cyclonev_io_obuf \moore_counter_overlap[2]~output (
+	.i(\overlap_inst|moore_counter [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(moore_counter_overlap[2]),
+	.obar());
+// synopsys translate_off
+defparam \moore_counter_overlap[2]~output .bus_hold = "false";
+defparam \moore_counter_overlap[2]~output .open_drain_output = "false";
+defparam \moore_counter_overlap[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y37_N22
+cyclonev_io_obuf \mealy_counter_overlap[0]~output (
+	.i(\overlap_inst|mealy_counter [0]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(mealy_counter_overlap[0]),
+	.obar());
+// synopsys translate_off
+defparam \mealy_counter_overlap[0]~output .bus_hold = "false";
+defparam \mealy_counter_overlap[0]~output .open_drain_output = "false";
+defparam \mealy_counter_overlap[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y37_N56
+cyclonev_io_obuf \mealy_counter_overlap[1]~output (
+	.i(\overlap_inst|mealy_counter [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(mealy_counter_overlap[1]),
+	.obar());
+// synopsys translate_off
+defparam \mealy_counter_overlap[1]~output .bus_hold = "false";
+defparam \mealy_counter_overlap[1]~output .open_drain_output = "false";
+defparam \mealy_counter_overlap[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y37_N5
+cyclonev_io_obuf \mealy_counter_overlap[2]~output (
+	.i(\overlap_inst|mealy_counter [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(mealy_counter_overlap[2]),
+	.obar());
+// synopsys translate_off
+defparam \mealy_counter_overlap[2]~output .bus_hold = "false";
+defparam \mealy_counter_overlap[2]~output .open_drain_output = "false";
+defparam \mealy_counter_overlap[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y35_N45
+cyclonev_io_obuf \moore_Sequence_nonoverlap~output (
+	.i(\nonoverlap_inst|moore_current_state.Sixth~q ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(moore_Sequence_nonoverlap),
+	.obar());
+// synopsys translate_off
+defparam \moore_Sequence_nonoverlap~output .bus_hold = "false";
+defparam \moore_Sequence_nonoverlap~output .open_drain_output = "false";
+defparam \moore_Sequence_nonoverlap~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y38_N5
+cyclonev_io_obuf \mealy_Sequence_nonoverlap~output (
+	.i(\nonoverlap_inst|mealy_Sequence_detector~combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(mealy_Sequence_nonoverlap),
+	.obar());
+// synopsys translate_off
+defparam \mealy_Sequence_nonoverlap~output .bus_hold = "false";
+defparam \mealy_Sequence_nonoverlap~output .open_drain_output = "false";
+defparam \mealy_Sequence_nonoverlap~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X89_Y35_N61
+cyclonev_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G9
+cyclonev_clkena \clk~inputCLKENA0 (
+	.inclk(\clk~input_o ),
+	.ena(vcc),
+	.outclk(\clk~inputCLKENA0_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \clk~inputCLKENA0 .clock_type = "global clock";
+defparam \clk~inputCLKENA0 .disable_mode = "low";
+defparam \clk~inputCLKENA0 .ena_register_mode = "always enabled";
+defparam \clk~inputCLKENA0 .ena_register_power_up = "high";
+defparam \clk~inputCLKENA0 .test_syn = "high";
+// synopsys translate_on
+
+// Location: IOIBUF_X89_Y35_N95
+cyclonev_io_ibuf \Serial_input~input (
+	.i(Serial_input),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Serial_input~input_o ));
+// synopsys translate_off
+defparam \Serial_input~input .bus_hold = "false";
+defparam \Serial_input~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N0
+cyclonev_lcell_comb \overlap_inst|Selector0~0 (
+// Equation(s):
+// \overlap_inst|Selector0~0_combout  = ( \overlap_inst|moore_current_state.Fourth~q  ) # ( !\overlap_inst|moore_current_state.Fourth~q  & ( (\overlap_inst|moore_current_state.Second~q ) # (\Serial_input~input_o ) ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(!\overlap_inst|moore_current_state.Second~q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.Fourth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|Selector0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|Selector0~0 .extended_lut = "off";
+defparam \overlap_inst|Selector0~0 .lut_mask = 64'h5F5F5F5FFFFFFFFF;
+defparam \overlap_inst|Selector0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X89_Y38_N21
+cyclonev_io_ibuf \rst~input (
+	.i(rst),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\rst~input_o ));
+// synopsys translate_off
+defparam \rst~input .bus_hold = "false";
+defparam \rst~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N1
+dffeas \overlap_inst|moore_current_state.start (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|Selector0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.start~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.start .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.start .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N33
+cyclonev_lcell_comb \overlap_inst|moore_next_state.First~0 (
+// Equation(s):
+// \overlap_inst|moore_next_state.First~0_combout  = ( !\overlap_inst|moore_current_state.start~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_next_state.First~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_next_state.First~0 .extended_lut = "off";
+defparam \overlap_inst|moore_next_state.First~0 .lut_mask = 64'h5555555500000000;
+defparam \overlap_inst|moore_next_state.First~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N34
+dffeas \overlap_inst|moore_current_state.First (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_next_state.First~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.First~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.First .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.First .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N48
+cyclonev_lcell_comb \overlap_inst|WideOr0~0 (
+// Equation(s):
+// \overlap_inst|WideOr0~0_combout  = ( \overlap_inst|moore_current_state.First~q  ) # ( !\overlap_inst|moore_current_state.First~q  & ( (\overlap_inst|moore_current_state.Second~q ) # (\overlap_inst|moore_current_state.Sixth~q ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\overlap_inst|moore_current_state.Sixth~q ),
+	.datad(!\overlap_inst|moore_current_state.Second~q ),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.First~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|WideOr0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|WideOr0~0 .extended_lut = "off";
+defparam \overlap_inst|WideOr0~0 .lut_mask = 64'h0FFF0FFFFFFFFFFF;
+defparam \overlap_inst|WideOr0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N50
+dffeas \overlap_inst|moore_current_state.Second (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|WideOr0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(!\Serial_input~input_o ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.Second~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.Second .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.Second .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N27
+cyclonev_lcell_comb \overlap_inst|moore_next_state.Third~0 (
+// Equation(s):
+// \overlap_inst|moore_next_state.Third~0_combout  = ( \overlap_inst|moore_current_state.Second~q  & ( !\Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.Second~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_next_state.Third~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_next_state.Third~0 .extended_lut = "off";
+defparam \overlap_inst|moore_next_state.Third~0 .lut_mask = 64'h00000000AAAAAAAA;
+defparam \overlap_inst|moore_next_state.Third~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N28
+dffeas \overlap_inst|moore_current_state.Third (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_next_state.Third~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.Third~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.Third .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.Third .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N3
+cyclonev_lcell_comb \overlap_inst|WideOr1~0 (
+// Equation(s):
+// \overlap_inst|WideOr1~0_combout  = ( \overlap_inst|moore_current_state.Third~q  ) # ( !\overlap_inst|moore_current_state.Third~q  & ( \overlap_inst|moore_current_state.Fourth~q  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\overlap_inst|moore_current_state.Fourth~q ),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.Third~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|WideOr1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|WideOr1~0 .extended_lut = "off";
+defparam \overlap_inst|WideOr1~0 .lut_mask = 64'h00FF00FFFFFFFFFF;
+defparam \overlap_inst|WideOr1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N5
+dffeas \overlap_inst|moore_current_state.Fourth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|WideOr1~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(!\Serial_input~input_o ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.Fourth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.Fourth .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.Fourth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N54
+cyclonev_lcell_comb \overlap_inst|moore_next_state.Fifth~0 (
+// Equation(s):
+// \overlap_inst|moore_next_state.Fifth~0_combout  = ( \overlap_inst|moore_current_state.Fourth~q  & ( !\Serial_input~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\Serial_input~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.Fourth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_next_state.Fifth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_next_state.Fifth~0 .extended_lut = "off";
+defparam \overlap_inst|moore_next_state.Fifth~0 .lut_mask = 64'h00000000F0F0F0F0;
+defparam \overlap_inst|moore_next_state.Fifth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N56
+dffeas \overlap_inst|moore_current_state.Fifth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_next_state.Fifth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.Fifth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.Fifth .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.Fifth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N51
+cyclonev_lcell_comb \overlap_inst|moore_next_state.Sixth~0 (
+// Equation(s):
+// \overlap_inst|moore_next_state.Sixth~0_combout  = ( \overlap_inst|moore_current_state.Fifth~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.Fifth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_next_state.Sixth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_next_state.Sixth~0 .extended_lut = "off";
+defparam \overlap_inst|moore_next_state.Sixth~0 .lut_mask = 64'h0000000055555555;
+defparam \overlap_inst|moore_next_state.Sixth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N53
+dffeas \overlap_inst|moore_current_state.Sixth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_next_state.Sixth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_current_state.Sixth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_current_state.Sixth .is_wysiwyg = "true";
+defparam \overlap_inst|moore_current_state.Sixth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N24
+cyclonev_lcell_comb \overlap_inst|Selector3~0 (
+// Equation(s):
+// \overlap_inst|Selector3~0_combout  = ( \overlap_inst|mealy_current_state.Second~q  ) # ( !\overlap_inst|mealy_current_state.Second~q  & ( (\overlap_inst|mealy_current_state.Fourth~q ) # (\Serial_input~input_o ) ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(!\overlap_inst|mealy_current_state.Fourth~q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|mealy_current_state.Second~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|Selector3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|Selector3~0 .extended_lut = "off";
+defparam \overlap_inst|Selector3~0 .lut_mask = 64'h5F5F5F5FFFFFFFFF;
+defparam \overlap_inst|Selector3~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N26
+dffeas \overlap_inst|mealy_current_state.start (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|Selector3~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_current_state.start~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_current_state.start .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_current_state.start .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N57
+cyclonev_lcell_comb \overlap_inst|Selector5~0 (
+// Equation(s):
+// \overlap_inst|Selector5~0_combout  = ( !\overlap_inst|mealy_current_state.Third~q  & ( !\overlap_inst|mealy_current_state.Fifth~q  & ( (\Serial_input~input_o  & \overlap_inst|mealy_current_state.start~q ) ) ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\overlap_inst|mealy_current_state.start~q ),
+	.datae(!\overlap_inst|mealy_current_state.Third~q ),
+	.dataf(!\overlap_inst|mealy_current_state.Fifth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|Selector5~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|Selector5~0 .extended_lut = "off";
+defparam \overlap_inst|Selector5~0 .lut_mask = 64'h0055000000000000;
+defparam \overlap_inst|Selector5~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N59
+dffeas \overlap_inst|mealy_current_state.Second (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|Selector5~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_current_state.Second~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_current_state.Second .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_current_state.Second .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N0
+cyclonev_lcell_comb \overlap_inst|mealy_next_state.Third~0 (
+// Equation(s):
+// \overlap_inst|mealy_next_state.Third~0_combout  = ( !\Serial_input~input_o  & ( \overlap_inst|mealy_current_state.Second~q  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\Serial_input~input_o ),
+	.dataf(!\overlap_inst|mealy_current_state.Second~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_next_state.Third~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_next_state.Third~0 .extended_lut = "off";
+defparam \overlap_inst|mealy_next_state.Third~0 .lut_mask = 64'h00000000FFFF0000;
+defparam \overlap_inst|mealy_next_state.Third~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N2
+dffeas \overlap_inst|mealy_current_state.Third (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|mealy_next_state.Third~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_current_state.Third~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_current_state.Third .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_current_state.Third .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N48
+cyclonev_lcell_comb \overlap_inst|mealy_next_state.Fourth~0 (
+// Equation(s):
+// \overlap_inst|mealy_next_state.Fourth~0_combout  = ( \Serial_input~input_o  & ( \overlap_inst|mealy_current_state.Third~q  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\Serial_input~input_o ),
+	.dataf(!\overlap_inst|mealy_current_state.Third~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_next_state.Fourth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_next_state.Fourth~0 .extended_lut = "off";
+defparam \overlap_inst|mealy_next_state.Fourth~0 .lut_mask = 64'h000000000000FFFF;
+defparam \overlap_inst|mealy_next_state.Fourth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N50
+dffeas \overlap_inst|mealy_current_state.Fourth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|mealy_next_state.Fourth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_current_state.Fourth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_current_state.Fourth .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_current_state.Fourth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N45
+cyclonev_lcell_comb \overlap_inst|mealy_next_state.Fifth~0 (
+// Equation(s):
+// \overlap_inst|mealy_next_state.Fifth~0_combout  = ( \overlap_inst|mealy_current_state.Fourth~q  & ( !\Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|mealy_current_state.Fourth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_next_state.Fifth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_next_state.Fifth~0 .extended_lut = "off";
+defparam \overlap_inst|mealy_next_state.Fifth~0 .lut_mask = 64'h00000000AAAAAAAA;
+defparam \overlap_inst|mealy_next_state.Fifth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N47
+dffeas \overlap_inst|mealy_current_state.Fifth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|mealy_next_state.Fifth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_current_state.Fifth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_current_state.Fifth .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_current_state.Fifth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N18
+cyclonev_lcell_comb \overlap_inst|mealy_Sequence_detector (
+// Equation(s):
+// \overlap_inst|mealy_Sequence_detector~combout  = ( \overlap_inst|mealy_current_state.Fifth~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\overlap_inst|mealy_current_state.Fifth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_Sequence_detector~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_Sequence_detector .extended_lut = "off";
+defparam \overlap_inst|mealy_Sequence_detector .lut_mask = 64'h0000000055555555;
+defparam \overlap_inst|mealy_Sequence_detector .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N58
+dffeas \overlap_inst|moore_counter[0] (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_counter[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_counter [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[0] .is_wysiwyg = "true";
+defparam \overlap_inst|moore_counter[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N57
+cyclonev_lcell_comb \overlap_inst|moore_counter[0]~0 (
+// Equation(s):
+// \overlap_inst|moore_counter[0]~0_combout  = ( \overlap_inst|moore_current_state.Sixth~q  & ( !\overlap_inst|moore_counter [0] ) ) # ( !\overlap_inst|moore_current_state.Sixth~q  & ( \overlap_inst|moore_counter [0] ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\overlap_inst|moore_counter [0]),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_current_state.Sixth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_counter[0]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[0]~0 .extended_lut = "off";
+defparam \overlap_inst|moore_counter[0]~0 .lut_mask = 64'h00FF00FFFF00FF00;
+defparam \overlap_inst|moore_counter[0]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N59
+dffeas \overlap_inst|moore_counter[0]~DUPLICATE (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_counter[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_counter[0]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[0]~DUPLICATE .is_wysiwyg = "true";
+defparam \overlap_inst|moore_counter[0]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N21
+cyclonev_lcell_comb \overlap_inst|moore_counter[1]~1 (
+// Equation(s):
+// \overlap_inst|moore_counter[1]~1_combout  = ( \overlap_inst|moore_counter [1] & ( \overlap_inst|moore_current_state.Sixth~q  & ( !\overlap_inst|moore_counter[0]~DUPLICATE_q  ) ) ) # ( !\overlap_inst|moore_counter [1] & ( 
+// \overlap_inst|moore_current_state.Sixth~q  & ( \overlap_inst|moore_counter[0]~DUPLICATE_q  ) ) ) # ( \overlap_inst|moore_counter [1] & ( !\overlap_inst|moore_current_state.Sixth~q  ) )
+
+	.dataa(gnd),
+	.datab(!\overlap_inst|moore_counter[0]~DUPLICATE_q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\overlap_inst|moore_counter [1]),
+	.dataf(!\overlap_inst|moore_current_state.Sixth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_counter[1]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[1]~1 .extended_lut = "off";
+defparam \overlap_inst|moore_counter[1]~1 .lut_mask = 64'h0000FFFF3333CCCC;
+defparam \overlap_inst|moore_counter[1]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N23
+dffeas \overlap_inst|moore_counter[1] (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_counter[1]~1_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_counter [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[1] .is_wysiwyg = "true";
+defparam \overlap_inst|moore_counter[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N12
+cyclonev_lcell_comb \overlap_inst|moore_counter[2]~2 (
+// Equation(s):
+// \overlap_inst|moore_counter[2]~2_combout  = ( \overlap_inst|moore_counter [0] & ( !\overlap_inst|moore_counter [2] $ (((!\overlap_inst|moore_counter [1]) # (!\overlap_inst|moore_current_state.Sixth~q ))) ) ) # ( !\overlap_inst|moore_counter [0] & ( 
+// \overlap_inst|moore_counter [2] ) )
+
+	.dataa(!\overlap_inst|moore_counter [1]),
+	.datab(gnd),
+	.datac(!\overlap_inst|moore_current_state.Sixth~q ),
+	.datad(!\overlap_inst|moore_counter [2]),
+	.datae(gnd),
+	.dataf(!\overlap_inst|moore_counter [0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|moore_counter[2]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[2]~2 .extended_lut = "off";
+defparam \overlap_inst|moore_counter[2]~2 .lut_mask = 64'h00FF00FF05FA05FA;
+defparam \overlap_inst|moore_counter[2]~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N13
+dffeas \overlap_inst|moore_counter[2] (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|moore_counter[2]~2_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|moore_counter [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|moore_counter[2] .is_wysiwyg = "true";
+defparam \overlap_inst|moore_counter[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N9
+cyclonev_lcell_comb \overlap_inst|mealy_counter[0]~0 (
+// Equation(s):
+// \overlap_inst|mealy_counter[0]~0_combout  = ( \overlap_inst|mealy_current_state.Fifth~q  & ( !\Serial_input~input_o  $ (!\overlap_inst|mealy_counter [0]) ) ) # ( !\overlap_inst|mealy_current_state.Fifth~q  & ( \overlap_inst|mealy_counter [0] ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\overlap_inst|mealy_counter [0]),
+	.datae(gnd),
+	.dataf(!\overlap_inst|mealy_current_state.Fifth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_counter[0]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_counter[0]~0 .extended_lut = "off";
+defparam \overlap_inst|mealy_counter[0]~0 .lut_mask = 64'h00FF00FF55AA55AA;
+defparam \overlap_inst|mealy_counter[0]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N11
+dffeas \overlap_inst|mealy_counter[0] (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|mealy_counter[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_counter [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_counter[0] .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_counter[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N21
+cyclonev_lcell_comb \overlap_inst|mealy_counter[1]~1 (
+// Equation(s):
+// \overlap_inst|mealy_counter[1]~1_combout  = ( \overlap_inst|mealy_counter [0] & ( !\overlap_inst|mealy_counter [1] $ (((!\Serial_input~input_o ) # (!\overlap_inst|mealy_current_state.Fifth~q ))) ) ) # ( !\overlap_inst|mealy_counter [0] & ( 
+// \overlap_inst|mealy_counter [1] ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(!\overlap_inst|mealy_current_state.Fifth~q ),
+	.datad(!\overlap_inst|mealy_counter [1]),
+	.datae(gnd),
+	.dataf(!\overlap_inst|mealy_counter [0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_counter[1]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_counter[1]~1 .extended_lut = "off";
+defparam \overlap_inst|mealy_counter[1]~1 .lut_mask = 64'h00FF00FF05FA05FA;
+defparam \overlap_inst|mealy_counter[1]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N23
+dffeas \overlap_inst|mealy_counter[1] (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|mealy_counter[1]~1_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_counter [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_counter[1] .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_counter[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N42
+cyclonev_lcell_comb \overlap_inst|mealy_counter[2]~2 (
+// Equation(s):
+// \overlap_inst|mealy_counter[2]~2_combout  = ( \overlap_inst|mealy_counter [0] & ( !\overlap_inst|mealy_counter [2] $ (((!\Serial_input~input_o ) # ((!\overlap_inst|mealy_current_state.Fifth~q ) # (!\overlap_inst|mealy_counter [1])))) ) ) # ( 
+// !\overlap_inst|mealy_counter [0] & ( \overlap_inst|mealy_counter [2] ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(!\overlap_inst|mealy_current_state.Fifth~q ),
+	.datac(!\overlap_inst|mealy_counter [1]),
+	.datad(!\overlap_inst|mealy_counter [2]),
+	.datae(gnd),
+	.dataf(!\overlap_inst|mealy_counter [0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\overlap_inst|mealy_counter[2]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \overlap_inst|mealy_counter[2]~2 .extended_lut = "off";
+defparam \overlap_inst|mealy_counter[2]~2 .lut_mask = 64'h00FF00FF01FE01FE;
+defparam \overlap_inst|mealy_counter[2]~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N43
+dffeas \overlap_inst|mealy_counter[2] (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\overlap_inst|mealy_counter[2]~2_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\overlap_inst|mealy_counter [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \overlap_inst|mealy_counter[2] .is_wysiwyg = "true";
+defparam \overlap_inst|mealy_counter[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N6
+cyclonev_lcell_comb \nonoverlap_inst|Selector0~0 (
+// Equation(s):
+// \nonoverlap_inst|Selector0~0_combout  = ( \nonoverlap_inst|moore_current_state.start~q  & ( \nonoverlap_inst|moore_current_state.First~q  & ( (\Serial_input~input_o  & !\nonoverlap_inst|moore_current_state.Sixth~q ) ) ) ) # ( 
+// !\nonoverlap_inst|moore_current_state.start~q  & ( \nonoverlap_inst|moore_current_state.First~q  & ( (\Serial_input~input_o  & !\nonoverlap_inst|moore_current_state.Sixth~q ) ) ) ) # ( \nonoverlap_inst|moore_current_state.start~q  & ( 
+// !\nonoverlap_inst|moore_current_state.First~q  & ( (!\nonoverlap_inst|moore_current_state.Sixth~q  & (((!\nonoverlap_inst|moore_current_state.Fifth~q  & !\nonoverlap_inst|moore_current_state.Third~q )) # (\Serial_input~input_o ))) ) ) ) # ( 
+// !\nonoverlap_inst|moore_current_state.start~q  & ( !\nonoverlap_inst|moore_current_state.First~q  & ( (\Serial_input~input_o  & !\nonoverlap_inst|moore_current_state.Sixth~q ) ) ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(!\nonoverlap_inst|moore_current_state.Sixth~q ),
+	.datac(!\nonoverlap_inst|moore_current_state.Fifth~q ),
+	.datad(!\nonoverlap_inst|moore_current_state.Third~q ),
+	.datae(!\nonoverlap_inst|moore_current_state.start~q ),
+	.dataf(!\nonoverlap_inst|moore_current_state.First~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|Selector0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|Selector0~0 .extended_lut = "off";
+defparam \nonoverlap_inst|Selector0~0 .lut_mask = 64'h4444C44444444444;
+defparam \nonoverlap_inst|Selector0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N7
+dffeas \nonoverlap_inst|moore_current_state.start (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|Selector0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.start~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.start .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.start .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N24
+cyclonev_lcell_comb \nonoverlap_inst|moore_next_state.First~0 (
+// Equation(s):
+// \nonoverlap_inst|moore_next_state.First~0_combout  = ( !\nonoverlap_inst|moore_current_state.start~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|moore_current_state.start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|moore_next_state.First~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_next_state.First~0 .extended_lut = "off";
+defparam \nonoverlap_inst|moore_next_state.First~0 .lut_mask = 64'h5555555500000000;
+defparam \nonoverlap_inst|moore_next_state.First~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N26
+dffeas \nonoverlap_inst|moore_current_state.First (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|moore_next_state.First~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.First~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.First .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.First .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N45
+cyclonev_lcell_comb \nonoverlap_inst|WideOr0~0 (
+// Equation(s):
+// \nonoverlap_inst|WideOr0~0_combout  = ( \nonoverlap_inst|moore_current_state.Second~q  & ( \nonoverlap_inst|moore_current_state.Fourth~q  ) ) # ( !\nonoverlap_inst|moore_current_state.Second~q  & ( \nonoverlap_inst|moore_current_state.Fourth~q  ) ) # ( 
+// \nonoverlap_inst|moore_current_state.Second~q  & ( !\nonoverlap_inst|moore_current_state.Fourth~q  ) ) # ( !\nonoverlap_inst|moore_current_state.Second~q  & ( !\nonoverlap_inst|moore_current_state.Fourth~q  & ( \nonoverlap_inst|moore_current_state.First~q 
+//  ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\nonoverlap_inst|moore_current_state.First~q ),
+	.datae(!\nonoverlap_inst|moore_current_state.Second~q ),
+	.dataf(!\nonoverlap_inst|moore_current_state.Fourth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|WideOr0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|WideOr0~0 .extended_lut = "off";
+defparam \nonoverlap_inst|WideOr0~0 .lut_mask = 64'h00FFFFFFFFFFFFFF;
+defparam \nonoverlap_inst|WideOr0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N46
+dffeas \nonoverlap_inst|moore_current_state.Second (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|WideOr0~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(!\Serial_input~input_o ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.Second~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.Second .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.Second .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N15
+cyclonev_lcell_comb \nonoverlap_inst|moore_next_state.Third~0 (
+// Equation(s):
+// \nonoverlap_inst|moore_next_state.Third~0_combout  = ( \nonoverlap_inst|moore_current_state.Second~q  & ( !\Serial_input~input_o  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\Serial_input~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|moore_current_state.Second~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|moore_next_state.Third~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_next_state.Third~0 .extended_lut = "off";
+defparam \nonoverlap_inst|moore_next_state.Third~0 .lut_mask = 64'h00000000F0F0F0F0;
+defparam \nonoverlap_inst|moore_next_state.Third~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N17
+dffeas \nonoverlap_inst|moore_current_state.Third (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|moore_next_state.Third~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.Third~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.Third .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.Third .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N39
+cyclonev_lcell_comb \nonoverlap_inst|moore_next_state.Fourth~0 (
+// Equation(s):
+// \nonoverlap_inst|moore_next_state.Fourth~0_combout  = ( \nonoverlap_inst|moore_current_state.Third~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|moore_current_state.Third~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|moore_next_state.Fourth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_next_state.Fourth~0 .extended_lut = "off";
+defparam \nonoverlap_inst|moore_next_state.Fourth~0 .lut_mask = 64'h0000000055555555;
+defparam \nonoverlap_inst|moore_next_state.Fourth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N41
+dffeas \nonoverlap_inst|moore_current_state.Fourth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|moore_next_state.Fourth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.Fourth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.Fourth .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.Fourth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N36
+cyclonev_lcell_comb \nonoverlap_inst|moore_next_state.Fifth~0 (
+// Equation(s):
+// \nonoverlap_inst|moore_next_state.Fifth~0_combout  = ( \nonoverlap_inst|moore_current_state.Fourth~q  & ( !\Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|moore_current_state.Fourth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|moore_next_state.Fifth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_next_state.Fifth~0 .extended_lut = "off";
+defparam \nonoverlap_inst|moore_next_state.Fifth~0 .lut_mask = 64'h00000000AAAAAAAA;
+defparam \nonoverlap_inst|moore_next_state.Fifth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N38
+dffeas \nonoverlap_inst|moore_current_state.Fifth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|moore_next_state.Fifth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.Fifth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.Fifth .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.Fifth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y36_N30
+cyclonev_lcell_comb \nonoverlap_inst|moore_next_state.Sixth~0 (
+// Equation(s):
+// \nonoverlap_inst|moore_next_state.Sixth~0_combout  = ( \nonoverlap_inst|moore_current_state.Fifth~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|moore_current_state.Fifth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|moore_next_state.Sixth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_next_state.Sixth~0 .extended_lut = "off";
+defparam \nonoverlap_inst|moore_next_state.Sixth~0 .lut_mask = 64'h0000000055555555;
+defparam \nonoverlap_inst|moore_next_state.Sixth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y36_N32
+dffeas \nonoverlap_inst|moore_current_state.Sixth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|moore_next_state.Sixth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|moore_current_state.Sixth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|moore_current_state.Sixth .is_wysiwyg = "true";
+defparam \nonoverlap_inst|moore_current_state.Sixth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N6
+cyclonev_lcell_comb \nonoverlap_inst|mealy_next_state.First~0 (
+// Equation(s):
+// \nonoverlap_inst|mealy_next_state.First~0_combout  = ( !\nonoverlap_inst|mealy_current_state.start~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|mealy_current_state.start~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|mealy_next_state.First~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_next_state.First~0 .extended_lut = "off";
+defparam \nonoverlap_inst|mealy_next_state.First~0 .lut_mask = 64'h5555555500000000;
+defparam \nonoverlap_inst|mealy_next_state.First~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N7
+dffeas \nonoverlap_inst|mealy_current_state.First (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|mealy_next_state.First~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|mealy_current_state.First~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_current_state.First .is_wysiwyg = "true";
+defparam \nonoverlap_inst|mealy_current_state.First .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N12
+cyclonev_lcell_comb \nonoverlap_inst|Selector2~0 (
+// Equation(s):
+// \nonoverlap_inst|Selector2~0_combout  = ( \nonoverlap_inst|mealy_current_state.First~q  & ( (\Serial_input~input_o  & !\nonoverlap_inst|mealy_current_state.Fifth~q ) ) ) # ( !\nonoverlap_inst|mealy_current_state.First~q  & ( 
+// (!\nonoverlap_inst|mealy_current_state.Fifth~q  & (((!\nonoverlap_inst|mealy_current_state.Third~q  & \nonoverlap_inst|mealy_current_state.start~q )) # (\Serial_input~input_o ))) ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(!\nonoverlap_inst|mealy_current_state.Third~q ),
+	.datac(!\nonoverlap_inst|mealy_current_state.Fifth~q ),
+	.datad(!\nonoverlap_inst|mealy_current_state.start~q ),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|mealy_current_state.First~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|Selector2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|Selector2~0 .extended_lut = "off";
+defparam \nonoverlap_inst|Selector2~0 .lut_mask = 64'h50D050D050505050;
+defparam \nonoverlap_inst|Selector2~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N14
+dffeas \nonoverlap_inst|mealy_current_state.start (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|Selector2~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|mealy_current_state.start~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_current_state.start .is_wysiwyg = "true";
+defparam \nonoverlap_inst|mealy_current_state.start .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N30
+cyclonev_lcell_comb \nonoverlap_inst|Selector3~0 (
+// Equation(s):
+// \nonoverlap_inst|Selector3~0_combout  = ( !\nonoverlap_inst|mealy_current_state.Third~q  & ( (\Serial_input~input_o  & (\nonoverlap_inst|mealy_current_state.start~q  & !\nonoverlap_inst|mealy_current_state.Fifth~q )) ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(!\nonoverlap_inst|mealy_current_state.start~q ),
+	.datac(!\nonoverlap_inst|mealy_current_state.Fifth~q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|mealy_current_state.Third~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|Selector3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|Selector3~0 .extended_lut = "off";
+defparam \nonoverlap_inst|Selector3~0 .lut_mask = 64'h1010101000000000;
+defparam \nonoverlap_inst|Selector3~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N31
+dffeas \nonoverlap_inst|mealy_current_state.Second (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|Selector3~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|mealy_current_state.Second~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_current_state.Second .is_wysiwyg = "true";
+defparam \nonoverlap_inst|mealy_current_state.Second .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N39
+cyclonev_lcell_comb \nonoverlap_inst|mealy_next_state.Third~0 (
+// Equation(s):
+// \nonoverlap_inst|mealy_next_state.Third~0_combout  = ( !\Serial_input~input_o  & ( \nonoverlap_inst|mealy_current_state.Second~q  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\Serial_input~input_o ),
+	.dataf(!\nonoverlap_inst|mealy_current_state.Second~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|mealy_next_state.Third~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_next_state.Third~0 .extended_lut = "off";
+defparam \nonoverlap_inst|mealy_next_state.Third~0 .lut_mask = 64'h00000000FFFF0000;
+defparam \nonoverlap_inst|mealy_next_state.Third~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N41
+dffeas \nonoverlap_inst|mealy_current_state.Third (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|mealy_next_state.Third~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|mealy_current_state.Third~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_current_state.Third .is_wysiwyg = "true";
+defparam \nonoverlap_inst|mealy_current_state.Third .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N15
+cyclonev_lcell_comb \nonoverlap_inst|mealy_next_state.Fourth~0 (
+// Equation(s):
+// \nonoverlap_inst|mealy_next_state.Fourth~0_combout  = ( \nonoverlap_inst|mealy_current_state.Third~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|mealy_current_state.Third~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|mealy_next_state.Fourth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_next_state.Fourth~0 .extended_lut = "off";
+defparam \nonoverlap_inst|mealy_next_state.Fourth~0 .lut_mask = 64'h0000000055555555;
+defparam \nonoverlap_inst|mealy_next_state.Fourth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N16
+dffeas \nonoverlap_inst|mealy_current_state.Fourth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|mealy_next_state.Fourth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|mealy_current_state.Fourth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_current_state.Fourth .is_wysiwyg = "true";
+defparam \nonoverlap_inst|mealy_current_state.Fourth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N33
+cyclonev_lcell_comb \nonoverlap_inst|mealy_next_state.Fifth~0 (
+// Equation(s):
+// \nonoverlap_inst|mealy_next_state.Fifth~0_combout  = ( \nonoverlap_inst|mealy_current_state.Fourth~q  & ( !\Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|mealy_current_state.Fourth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|mealy_next_state.Fifth~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_next_state.Fifth~0 .extended_lut = "off";
+defparam \nonoverlap_inst|mealy_next_state.Fifth~0 .lut_mask = 64'h00000000AAAAAAAA;
+defparam \nonoverlap_inst|mealy_next_state.Fifth~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X88_Y37_N35
+dffeas \nonoverlap_inst|mealy_current_state.Fifth (
+	.clk(\clk~inputCLKENA0_outclk ),
+	.d(\nonoverlap_inst|mealy_next_state.Fifth~0_combout ),
+	.asdata(vcc),
+	.clrn(\rst~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\nonoverlap_inst|mealy_current_state.Fifth~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_current_state.Fifth .is_wysiwyg = "true";
+defparam \nonoverlap_inst|mealy_current_state.Fifth .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X88_Y37_N27
+cyclonev_lcell_comb \nonoverlap_inst|mealy_Sequence_detector (
+// Equation(s):
+// \nonoverlap_inst|mealy_Sequence_detector~combout  = ( \nonoverlap_inst|mealy_current_state.Fifth~q  & ( \Serial_input~input_o  ) )
+
+	.dataa(!\Serial_input~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\nonoverlap_inst|mealy_current_state.Fifth~q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\nonoverlap_inst|mealy_Sequence_detector~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \nonoverlap_inst|mealy_Sequence_detector .extended_lut = "off";
+defparam \nonoverlap_inst|mealy_Sequence_detector .lut_mask = 64'h0000000055555555;
+defparam \nonoverlap_inst|mealy_Sequence_detector .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X79_Y27_N3
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule

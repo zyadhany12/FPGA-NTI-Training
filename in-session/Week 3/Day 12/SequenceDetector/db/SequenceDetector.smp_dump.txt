@@ -1,0 +1,38 @@
+
+State Machine - |Top_Module|non_overlapping:nonoverlap_inst|mealy_current_state
+Name mealy_current_state.Fifth mealy_current_state.Fourth mealy_current_state.Third mealy_current_state.Second mealy_current_state.First mealy_current_state.start 
+mealy_current_state.start 0 0 0 0 0 0 
+mealy_current_state.First 0 0 0 0 1 1 
+mealy_current_state.Second 0 0 0 1 0 1 
+mealy_current_state.Third 0 0 1 0 0 1 
+mealy_current_state.Fourth 0 1 0 0 0 1 
+mealy_current_state.Fifth 1 0 0 0 0 1 
+
+State Machine - |Top_Module|non_overlapping:nonoverlap_inst|moore_current_state
+Name moore_current_state.Sixth moore_current_state.Fifth moore_current_state.Fourth moore_current_state.Third moore_current_state.Second moore_current_state.First moore_current_state.start 
+moore_current_state.start 0 0 0 0 0 0 0 
+moore_current_state.First 0 0 0 0 0 1 1 
+moore_current_state.Second 0 0 0 0 1 0 1 
+moore_current_state.Third 0 0 0 1 0 0 1 
+moore_current_state.Fourth 0 0 1 0 0 0 1 
+moore_current_state.Fifth 0 1 0 0 0 0 1 
+moore_current_state.Sixth 1 0 0 0 0 0 1 
+
+State Machine - |Top_Module|overlapping:overlap_inst|mealy_current_state
+Name mealy_current_state.Fifth mealy_current_state.Fourth mealy_current_state.Third mealy_current_state.Second mealy_current_state.First mealy_current_state.start 
+mealy_current_state.start 0 0 0 0 0 0 
+mealy_current_state.First 0 0 0 0 1 1 
+mealy_current_state.Second 0 0 0 1 0 1 
+mealy_current_state.Third 0 0 1 0 0 1 
+mealy_current_state.Fourth 0 1 0 0 0 1 
+mealy_current_state.Fifth 1 0 0 0 0 1 
+
+State Machine - |Top_Module|overlapping:overlap_inst|moore_current_state
+Name moore_current_state.Sixth moore_current_state.Fifth moore_current_state.Fourth moore_current_state.Third moore_current_state.Second moore_current_state.First moore_current_state.start 
+moore_current_state.start 0 0 0 0 0 0 0 
+moore_current_state.First 0 0 0 0 0 1 1 
+moore_current_state.Second 0 0 0 0 1 0 1 
+moore_current_state.Third 0 0 0 1 0 0 1 
+moore_current_state.Fourth 0 0 1 0 0 0 1 
+moore_current_state.Fifth 0 1 0 0 0 0 1 
+moore_current_state.Sixth 1 0 0 0 0 0 1 

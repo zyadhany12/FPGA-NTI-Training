@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "moore_Sequence_overlap",
+					"strict" : false
+				},
+				{
+					"name" : "mealy_Sequence_overlap",
+					"strict" : false
+				},
+				{
+					"name" : "moore_counter_overlap[0]",
+					"strict" : false
+				},
+				{
+					"name" : "moore_counter_overlap[1]",
+					"strict" : false
+				},
+				{
+					"name" : "moore_counter_overlap[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mealy_counter_overlap[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mealy_counter_overlap[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mealy_counter_overlap[2]",
+					"strict" : false
+				},
+				{
+					"name" : "moore_Sequence_nonoverlap",
+					"strict" : false
+				},
+				{
+					"name" : "mealy_Sequence_nonoverlap",
+					"strict" : false
+				},
+				{
+					"name" : "Serial_input",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

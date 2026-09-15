@@ -1,0 +1,85 @@
+|Top_Module
+clk => clk.IN2
+Serial_input => Serial_input.IN2
+rst => rst.IN2
+moore_Sequence_overlap << overlapping:overlap_inst.moore_Sequence_detector
+mealy_Sequence_overlap << overlapping:overlap_inst.mealy_Sequence_detector
+moore_counter_overlap[0] << overlapping:overlap_inst.moore_counter
+moore_counter_overlap[1] << overlapping:overlap_inst.moore_counter
+moore_counter_overlap[2] << overlapping:overlap_inst.moore_counter
+mealy_counter_overlap[0] << overlapping:overlap_inst.mealy_counter
+mealy_counter_overlap[1] << overlapping:overlap_inst.mealy_counter
+mealy_counter_overlap[2] << overlapping:overlap_inst.mealy_counter
+moore_Sequence_nonoverlap << non_overlapping:nonoverlap_inst.moore_Sequence_detector
+mealy_Sequence_nonoverlap << non_overlapping:nonoverlap_inst.mealy_Sequence_detector
+
+
+|Top_Module|overlapping:overlap_inst
+clk => mealy_counter[0]~reg0.CLK
+clk => mealy_counter[1]~reg0.CLK
+clk => mealy_counter[2]~reg0.CLK
+clk => moore_counter[0]~reg0.CLK
+clk => moore_counter[1]~reg0.CLK
+clk => moore_counter[2]~reg0.CLK
+clk => mealy_current_state~1.DATAIN
+clk => moore_current_state~1.DATAIN
+Serial_input => always2.IN0
+Serial_input => moore_next_state.First.DATAB
+Serial_input => Selector2.IN1
+Serial_input => moore_next_state.Sixth.DATAB
+Serial_input => Selector1.IN1
+Serial_input => mealy_next_state.Fourth.DATAB
+Serial_input => Selector5.IN1
+Serial_input => Selector4.IN2
+Serial_input => Selector0.IN1
+Serial_input => moore_next_state.Third.DATAB
+Serial_input => moore_next_state.Fifth.DATAB
+Serial_input => Selector3.IN1
+Serial_input => mealy_next_state.Third.DATAB
+Serial_input => mealy_next_state.Fifth.DATAB
+rst => mealy_counter[0]~reg0.ACLR
+rst => mealy_counter[1]~reg0.ACLR
+rst => mealy_counter[2]~reg0.ACLR
+rst => moore_counter[0]~reg0.ACLR
+rst => moore_counter[1]~reg0.ACLR
+rst => moore_counter[2]~reg0.ACLR
+rst => mealy_current_state~3.DATAIN
+rst => moore_current_state~3.DATAIN
+moore_Sequence_detector <= moore_Sequence_detector.DB_MAX_OUTPUT_PORT_TYPE
+mealy_Sequence_detector <= always2.DB_MAX_OUTPUT_PORT_TYPE
+moore_counter[0] <= moore_counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+moore_counter[1] <= moore_counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+moore_counter[2] <= moore_counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mealy_counter[0] <= mealy_counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mealy_counter[1] <= mealy_counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mealy_counter[2] <= mealy_counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Module|non_overlapping:nonoverlap_inst
+clk => mealy_current_state~1.DATAIN
+clk => moore_current_state~1.DATAIN
+Serial_input => always2.IN0
+Serial_input => moore_next_state.First.DATAB
+Serial_input => moore_next_state.Fourth.DATAB
+Serial_input => Selector1.IN1
+Serial_input => moore_next_state.Sixth.DATAB
+Serial_input => mealy_next_state.First.DATAB
+Serial_input => mealy_next_state.Fourth.DATAB
+Serial_input => Selector3.IN1
+Serial_input => Selector0.IN2
+Serial_input => Selector0.IN3
+Serial_input => Selector0.IN4
+Serial_input => Selector0.IN5
+Serial_input => moore_next_state.Third.DATAB
+Serial_input => moore_next_state.Fifth.DATAB
+Serial_input => Selector2.IN2
+Serial_input => Selector2.IN3
+Serial_input => Selector2.IN4
+Serial_input => mealy_next_state.Third.DATAB
+Serial_input => mealy_next_state.Fifth.DATAB
+rst => mealy_current_state~3.DATAIN
+rst => moore_current_state~3.DATAIN
+moore_Sequence_detector <= moore_Sequence_detector.DB_MAX_OUTPUT_PORT_TYPE
+mealy_Sequence_detector <= always2.DB_MAX_OUTPUT_PORT_TYPE
+
+
