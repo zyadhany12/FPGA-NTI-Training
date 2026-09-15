@@ -1,0 +1,143 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/HP/Desktop/NTI Training/FPGA Work/in-session/Week 3/Day 12
+vcounter
+Z1 !s110 1789440271
+!i10b 1
+!s100 ;`cEVm>6aj[3GDeE9d4D[1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IMUGRTck=O;XHK_[9aYVQY2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1789440270
+8counter.v
+Fcounter.v
+!i122 8
+L0 1 24
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1789440271.000000
+!s107 register_test.v|register.v|memory_test.v|memory.v|counter_test.v|counter.v|
+Z6 !s90 counter.v|counter_test.v|memory.v|memory_test.v|register.v|register_test.v|
+!i113 1
+Z7 tCvgOpt 0
+vcounter_test
+R1
+!i10b 1
+!s100 @C0a6MF>JbmJkSTNFdiQ`1
+R2
+IeCo[^Qj:?E`;V^KZ4:H^81
+R3
+R0
+w1789437998
+8counter_test.v
+Fcounter_test.v
+!i122 8
+L0 1 54
+R4
+r1
+!s85 0
+31
+R5
+Z8 !s107 register_test.v|register.v|memory_test.v|memory.v|counter_test.v|counter.v|
+R6
+!i113 1
+R7
+vmemory
+R1
+!i10b 1
+!s100 mGFccH]d445LbGFgjfCee2
+R2
+IZ?_bn5<;=P;n9ojLHOQWO2
+R3
+R0
+w1789439887
+8memory.v
+Fmemory.v
+!i122 8
+L0 1 21
+R4
+r1
+!s85 0
+31
+R5
+R8
+R6
+!i113 1
+R7
+vmemory_test
+R1
+!i10b 1
+!s100 AKILY<2TgLUSP6:cBGdJU0
+R2
+IEa6YIBilf7ki7?6dgeXec3
+R3
+R0
+w1789437992
+8memory_test.v
+Fmemory_test.v
+!i122 8
+L0 1 77
+R4
+r1
+!s85 0
+31
+R5
+R8
+R6
+!i113 1
+R7
+vregister
+R1
+!i10b 1
+!s100 DF3WGEQaZWEl[K;9aZXgK2
+R2
+I?JQ@L^FmjJ`1fOb_W7<FK0
+R3
+R0
+w1789438442
+8register.v
+Fregister.v
+!i122 8
+L0 1 18
+R4
+r1
+!s85 0
+31
+R5
+R8
+R6
+!i113 1
+R7
+vregister_test
+R1
+!i10b 1
+!s100 mVoUJhWcaXC[><3jLEfPY2
+R2
+IiZUVD8CEcDZS?gFVSKoQi0
+R3
+R0
+w1789437918
+8register_test.v
+Fregister_test.v
+!i122 8
+L0 1 50
+R4
+r1
+!s85 0
+31
+R5
+R8
+R6
+!i113 1
+R7

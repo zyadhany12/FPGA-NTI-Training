@@ -1,0 +1,90 @@
+module overlapping
+(
+    input wire clk, Serial_input, rst,
+    output reg moore_Sequence_detector, mealy_Sequence_detector,
+    output reg [2:0] moore_counter, mealy_counter
+);
+
+localparam Pattern = 6'b110101;
+
+localparam  start  = 3'b000;
+localparam  First  = 3'b001;
+localparam  Second = 3'b010;
+localparam  Third  = 3'b011;
+localparam  Fourth = 3'b100;
+localparam  Fifth  = 3'b101;
+localparam  Sixth  = 3'b110;
+
+reg [2:0] moore_current_state, moore_next_state;
+reg [2:0] mealy_current_state, mealy_next_state;
+
+
+always @(posedge clk or negedge rst) 
+begin
+    if(!rst)
+    begin
+        moore_current_state <= start;
+        mealy_current_state <= start;
+        moore_counter <= 3'b000;
+        mealy_counter <= 3'b000;
+    end
+    else
+    begin
+    moore_current_state <= moore_next_state;
+    mealy_current_state <= mealy_next_state;
+    if(moore_Sequence_detector)
+    begin
+        moore_counter <= moore_counter + 1;
+    end
+    if(mealy_Sequence_detector)
+    begin
+        mealy_counter <= mealy_counter + 1;
+    end
+end
+end
+
+//moore 
+always @(*) 
+begin
+    case (moore_current_state)
+    start:  if(Serial_input)  moore_next_state = First;  else moore_next_state = start;
+    First:  if(Serial_input)  moore_next_state = Second; else moore_next_state = start;
+    Second: if(!Serial_input) moore_next_state = Third;  else moore_next_state = Second;
+    Third:  if(Serial_input)  moore_next_state = Fourth; else moore_next_state = start;
+    Fourth: if(!Serial_input) moore_next_state = Fifth;  else moore_next_state = Fourth;
+    Fifth:  if(Serial_input)  moore_next_state = Sixth;  else moore_next_state = start;
+    Sixth:  if(Serial_input)  moore_next_state = Second;  else moore_next_state = start;
+    endcase
+    if(moore_current_state == Sixth)
+    begin
+        moore_Sequence_detector = 1'b1;
+    end
+    else begin
+        moore_Sequence_detector = 1'b0;
+    end
+end
+
+// Mealy
+always @(*) 
+begin
+    case (mealy_current_state)
+    start:  if(Serial_input)  mealy_next_state = First;  else mealy_next_state = start;
+    First:  if(Serial_input)  mealy_next_state = Second; else mealy_next_state = start;
+    Second: if(!Serial_input) mealy_next_state = Third;  else mealy_next_state = Second;
+    Third:  if(Serial_input)  mealy_next_state = Fourth; else mealy_next_state = start;
+    Fourth: if(!Serial_input) mealy_next_state = Fifth;  else mealy_next_state = Second;
+    Fifth:  if(Serial_input)  mealy_next_state = First;  else mealy_next_state = start;
+    endcase
+    if((mealy_current_state == Fifth) && (Serial_input))
+    begin
+        mealy_Sequence_detector = 1'b1;
+    end
+    else begin
+        mealy_Sequence_detector = 1'b0;
+    end
+end
+
+
+
+endmodule
+
