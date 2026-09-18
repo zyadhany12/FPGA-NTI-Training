@@ -1328,7 +1328,7 @@ This project was developed as part of the **NTI Digital Design / FPGA training**
 | Omar Ahmed Gamal Abdo          |
 | Youssef Hatem Abdeljalil       |
 | Youssef Mohammed Zainelabedeen |
-| Zyad Hany Mahmoud              |
+| Zeyad Hany Mahmoud             |
 
 ---
 
