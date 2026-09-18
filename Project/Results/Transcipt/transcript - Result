@@ -1,0 +1,175 @@
+# vsim -c -do "run -all; quit" i2c_slave_tb 
+# Start time: 02:22:31 on Sep 16,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+# Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.i2c_slave_tb(fast)
+# run -all
+# ========================================
+# I2C SLAVE VERIFICATION START
+# ========================================
+# [T=10000] DUT state -> 0
+# PASS: Reset: SDA released and rx_data == 0
+# [T=5450000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=90450000] DUT state -> 2
+# [MASTER] address+W sent, addr_ack=0
+# [T=100450000] DUT state -> 3
+# [T=180450000] DUT state -> 4
+# [MASTER] data 0xa5 sent, data_ack=0
+# [T=190450000] DUT state -> 7
+# [T=200450000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: WRITE: address ACK received
+# PASS: WRITE: data ACK received
+# PASS: WRITE: rx_data == 0x A5
+# [T=210830000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=295830000] DUT state -> 2
+# [MASTER] address+R sent, addr_ack=0
+# [T=305830000] DUT state -> 5
+# [MASTER] data received = 0xa5
+# [T=385830000] DUT state -> 6
+# [T=395830000] DUT state -> 7
+# [T=405830000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: READ: address ACK received
+# PASS: READ: data received == 0xA5
+# [T=416210000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=501210000] DUT state -> 2
+# [MASTER] address+W sent, addr_ack=0
+# [T=511210000] DUT state -> 3
+# [T=591210000] DUT state -> 4
+# [MASTER] data 0xa5 sent, data_ack=0
+# [T=601210000] DUT state -> 7
+# [T=611210000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: WRITE: MSB-first byte stored exactly (10100101)
+# [T=621590000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=706590000] DUT state -> 2
+# [MASTER] address+R sent, addr_ack=0
+# [T=716590000] DUT state -> 5
+# [MASTER] data received = 0xa5
+# [T=796590000] DUT state -> 6
+# [T=806590000] DUT state -> 7
+# [T=816590000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: READ: MSB-first byte transmitted exactly (10100101)
+# [T=826970000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=911970000] DUT state -> 2
+# [MASTER] address+W sent, addr_ack=1
+# [T=921970000] DUT state -> 7
+# [T=931970000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: WRONG ADDR: no ACK observed (NACK)
+# PASS: WRONG ADDR: rx_data unchanged
+# [T=942350000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=1027350000] DUT state -> 2
+# [MASTER] address+W sent, addr_ack=0
+# [T=1037350000] DUT state -> 3
+# [T=1117350000] DUT state -> 4
+# [MASTER] data 0x0 sent, data_ack=0
+# [T=1127350000] DUT state -> 7
+# [T=1137350000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: MULTI-WRITE: rx_data == 0x00
+# [T=1147530000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=1232530000] DUT state -> 2
+# [MASTER] address+W sent, addr_ack=0
+# [T=1242530000] DUT state -> 3
+# [T=1322530000] DUT state -> 4
+# [MASTER] data 0xff sent, data_ack=0
+# [T=1332530000] DUT state -> 7
+# [T=1342530000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: MULTI-WRITE: rx_data == 0xFF
+# [T=1352710000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=1437710000] DUT state -> 2
+# [MASTER] address+W sent, addr_ack=0
+# [T=1447710000] DUT state -> 3
+# [T=1527710000] DUT state -> 4
+# [MASTER] data 0x55 sent, data_ack=0
+# [T=1537710000] DUT state -> 7
+# [T=1547710000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: MULTI-WRITE: rx_data == 0x55
+# [T=1557890000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=1642890000] DUT state -> 2
+# [MASTER] address+R sent, addr_ack=0
+# [T=1652890000] DUT state -> 5
+# [MASTER] data received = 0x55
+# [T=1732890000] DUT state -> 6
+# [T=1742890000] DUT state -> 7
+# [T=1752890000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: MULTI-READ: first read == 0x55
+# [T=1763070000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=1848070000] DUT state -> 2
+# [MASTER] address+R sent, addr_ack=0
+# [T=1858070000] DUT state -> 5
+# [MASTER] data received = 0x55
+# [T=1938070000] DUT state -> 6
+# [T=1948070000] DUT state -> 7
+# [T=1958070000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: MULTI-READ: repeat read == 0x55 (stable)
+# PASS: START detection: exercised by all transactions above
+# [T=1968250000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=2053250000] DUT state -> 2
+# [T=2063250000] DUT state -> 3
+# [T=2073250000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: STOP (abort mid-transaction): SDA released, FSM back to IDLE
+# PASS: ACK: correct-address ACK re-verified
+# [T=2083630000] DUT state -> 1
+# [MASTER] START condition generated
+# [T=2168630000] DUT state -> 2
+# [T=2178630000] DUT state -> 5
+# [T=2258630000] DUT state -> 6
+# [T=2268630000] DUT state -> 7
+# [T=2278630000] DUT state -> 0
+# [MASTER] STOP condition generated
+# PASS: NACK handling: unexpected master ACK does not hang/corrupt bus
+# PASS: NACK handling: correct data still transmitted (0x55)
+# [T=2289010000] DUT state -> 1
+# [MASTER] START condition generated
+# PASS: OPEN-DRAIN: bus reads LOW when driven low by either side
+# [T=2299010000] DUT state -> 0
+# PASS: OPEN-DRAIN: bus releases HIGH (pull-up) when nobody drives low
+# ========================================
+# I2C SLAVE VERIFICATION SUMMARY
+# ========================================
+# TOTAL TESTS : 22
+# PASSED      : 22
+# FAILED      : 0
+# ========================================
+# ALL TESTS PASSED
+# ========================================
+# ** Note: $finish    : ./i2c_slave_tb.sv(368)
+#    Time: 2304330 ns  Iteration: 1  Instance: /i2c_slave_tb
+# End time: 02:22:33 on Sep 16,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

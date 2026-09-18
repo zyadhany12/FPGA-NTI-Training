@@ -1,0 +1,116 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram id="i2c-master-fsm" name="i2c_master FSM">
+    <mxGraphModel dx="1664" dy="989" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1" value="i2c_master FSM&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="420" x="300" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="IDLE" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="IDLE" vertex="1">
+          <mxGeometry height="50" width="140" x="430" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="START" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="START" vertex="1">
+          <mxGeometry height="50" width="140" x="430" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="SEND_ADDR" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="SEND_ADDR" vertex="1">
+          <mxGeometry height="50" width="140" x="430" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ADDR_ACK" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="ADDR_ACK" vertex="1">
+          <mxGeometry height="50" width="140" x="430" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="WRITE_DATA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="WRITE_DATA" vertex="1">
+          <mxGeometry height="50" width="140" x="180" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="DATA_ACK" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="DATA_ACK" vertex="1">
+          <mxGeometry height="50" width="140" x="180" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="READ_DATA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="READ_DATA" vertex="1">
+          <mxGeometry height="50" width="140" x="680" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="MASTER_ACK" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="MASTER_ACK" vertex="1">
+          <mxGeometry height="50" width="140" x="680" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="STOP" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="STOP" vertex="1">
+          <mxGeometry height="50" width="140" x="430" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="DONE" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="DONE" vertex="1">
+          <mxGeometry height="50" width="140" x="430" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="e_idle_start" edge="1" parent="1" source="IDLE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="START" value="start">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_idle_idle" edge="1" parent="1" source="IDLE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="IDLE" value="!start">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="82" />
+              <mxPoint x="620" y="108" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_start_sendaddr" edge="1" parent="1" source="START" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="SEND_ADDR" value="i2c_tick &amp;&amp; sda_drive_low">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sendaddr_addrack" edge="1" parent="1" source="SEND_ADDR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="ADDR_ACK" value="i2c_tick &amp;&amp; !scl_drive_low&#xa;&amp;&amp; bit_count == 0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_addrack_write" edge="1" parent="1" source="ADDR_ACK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="WRITE_DATA" value="ACK (sda==0) &amp;&amp; !rw">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_addrack_read" edge="1" parent="1" source="ADDR_ACK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="READ_DATA" value="ACK (sda==0) &amp;&amp; rw">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_addrack_stop" edge="1" parent="1" source="ADDR_ACK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;strokeColor=#b85450;fontColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="STOP" value="NACK (sda==1)&#xa;ack_error &lt;= 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_write_dataack" edge="1" parent="1" source="WRITE_DATA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="DATA_ACK" value="i2c_tick &amp;&amp; !scl_drive_low&#xa;&amp;&amp; bit_count == 0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_dataack_stop" edge="1" parent="1" source="DATA_ACK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="STOP" value="i2c_tick &amp;&amp; !scl_drive_low&#xa;(ACK and NACK both → STOP)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_read_masterack" edge="1" parent="1" source="READ_DATA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="MASTER_ACK" value="i2c_tick &amp;&amp; !scl_drive_low&#xa;&amp;&amp; bit_count == 0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_masterack_read" edge="1" parent="1" source="MASTER_ACK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="READ_DATA" value="more_data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="725" />
+              <mxPoint x="880" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_masterack_stop" edge="1" parent="1" source="MASTER_ACK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="STOP" value="!more_data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_stop_done" edge="1" parent="1" source="STOP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="DONE" value="i2c_tick &amp;&amp; !scl_drive_low">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_done_idle" edge="1" parent="1" source="DONE" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="IDLE" value="unconditional">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="975" />
+              <mxPoint x="100" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

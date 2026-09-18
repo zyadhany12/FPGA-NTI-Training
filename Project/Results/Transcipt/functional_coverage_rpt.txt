@@ -1,0 +1,176 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /apb_i2c_pkg
+=== Design Unit: work.apb_i2c_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          8        na        na        na
+            Covergroup Bins         38        38         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /apb_i2c_pkg/apb_i2c_trans/cvr_gp               100.00%        100          -    Covered              
+    covered/total bins:                                    38         38          -                      
+    missing/total bins:                                     0         38          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_addr                                100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ctrl                                          294          1          -    Covered              
+        bin status                                        283          1          -    Covered              
+        bin slave_addr                                    311          1          -    Covered              
+        bin tx_data                                       301          1          -    Covered              
+        bin rx_data                                       341          1          -    Covered              
+        bin clk_div                                       311          1          -    Covered              
+        bin int_status                                    321          1          -    Covered              
+        bin version                                       288          1          -    Covered              
+        bin invalid                                       552          1          -    Covered              
+    Coverpoint cp_rw                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1500          1          -    Covered              
+        bin auto[1]                                      1502          1          -    Covered              
+    Coverpoint cp_done                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1502          1          -    Covered              
+        bin auto[1]                                      1500          1          -    Covered              
+    Coverpoint cp_ack_err                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1496          1          -    Covered              
+        bin auto[1]                                      1506          1          -    Covered              
+    Coverpoint cp_bus_err                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1523          1          -    Covered              
+        bin auto[1]                                      1479          1          -    Covered              
+    Coverpoint cp_clk_div_zero                        100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_write                                      1          1          -    Covered              
+    Coverpoint cp_start_while_busy                    100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin busy_start                                     31          1          -    Covered              
+        bin idle_start                                     40          1          -    Covered              
+    Cross cx_addr_rw                                  100.00%        100          -    Covered              
+        covered/total bins:                                18         18          -                      
+        missing/total bins:                                 0         18          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <invalid,auto[1]>                         276          1          -    Covered              
+            bin <invalid,auto[0]>                         276          1          -    Covered              
+            bin <version,auto[1]>                         133          1          -    Covered              
+            bin <version,auto[0]>                         155          1          -    Covered              
+            bin <int_status,auto[1]>                      156          1          -    Covered              
+            bin <int_status,auto[0]>                      165          1          -    Covered              
+            bin <clk_div,auto[1]>                         158          1          -    Covered              
+            bin <clk_div,auto[0]>                         153          1          -    Covered              
+            bin <rx_data,auto[1]>                         180          1          -    Covered              
+            bin <rx_data,auto[0]>                         161          1          -    Covered              
+            bin <tx_data,auto[1]>                         151          1          -    Covered              
+            bin <tx_data,auto[0]>                         150          1          -    Covered              
+            bin <slave_addr,auto[1]>                      159          1          -    Covered              
+            bin <slave_addr,auto[0]>                      152          1          -    Covered              
+            bin <status,auto[1]>                          145          1          -    Covered              
+            bin <status,auto[0]>                          138          1          -    Covered              
+            bin <ctrl,auto[1]>                            144          1          -    Covered              
+            bin <ctrl,auto[0]>                            150          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /apb_i2c_pkg/apb_i2c_trans/cvr_gp               100.00%        100          -    Covered              
+    covered/total bins:                                    38         38          -                      
+    missing/total bins:                                     0         38          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_addr                                100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin ctrl                                          294          1          -    Covered              
+        bin status                                        283          1          -    Covered              
+        bin slave_addr                                    311          1          -    Covered              
+        bin tx_data                                       301          1          -    Covered              
+        bin rx_data                                       341          1          -    Covered              
+        bin clk_div                                       311          1          -    Covered              
+        bin int_status                                    321          1          -    Covered              
+        bin version                                       288          1          -    Covered              
+        bin invalid                                       552          1          -    Covered              
+    Coverpoint cp_rw                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1500          1          -    Covered              
+        bin auto[1]                                      1502          1          -    Covered              
+    Coverpoint cp_done                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1502          1          -    Covered              
+        bin auto[1]                                      1500          1          -    Covered              
+    Coverpoint cp_ack_err                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1496          1          -    Covered              
+        bin auto[1]                                      1506          1          -    Covered              
+    Coverpoint cp_bus_err                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                      1523          1          -    Covered              
+        bin auto[1]                                      1479          1          -    Covered              
+    Coverpoint cp_clk_div_zero                        100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_write                                      1          1          -    Covered              
+    Coverpoint cp_start_while_busy                    100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin busy_start                                     31          1          -    Covered              
+        bin idle_start                                     40          1          -    Covered              
+    Cross cx_addr_rw                                  100.00%        100          -    Covered              
+        covered/total bins:                                18         18          -                      
+        missing/total bins:                                 0         18          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <invalid,auto[1]>                         276          1          -    Covered              
+            bin <invalid,auto[0]>                         276          1          -    Covered              
+            bin <version,auto[1]>                         133          1          -    Covered              
+            bin <version,auto[0]>                         155          1          -    Covered              
+            bin <int_status,auto[1]>                      156          1          -    Covered              
+            bin <int_status,auto[0]>                      165          1          -    Covered              
+            bin <clk_div,auto[1]>                         158          1          -    Covered              
+            bin <clk_div,auto[0]>                         153          1          -    Covered              
+            bin <rx_data,auto[1]>                         180          1          -    Covered              
+            bin <rx_data,auto[0]>                         161          1          -    Covered              
+            bin <tx_data,auto[1]>                         151          1          -    Covered              
+            bin <tx_data,auto[0]>                         150          1          -    Covered              
+            bin <slave_addr,auto[1]>                      159          1          -    Covered              
+            bin <slave_addr,auto[0]>                      152          1          -    Covered              
+            bin <status,auto[1]>                          145          1          -    Covered              
+            bin <status,auto[0]>                          138          1          -    Covered              
+            bin <ctrl,auto[1]>                            144          1          -    Covered              
+            bin <ctrl,auto[0]>                            150          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+

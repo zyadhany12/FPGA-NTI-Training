@@ -1,0 +1,151 @@
+# ========================================
+# I2C MASTER VERIFICATION START
+# ========================================
+# 
+# ---- RESET ----
+#   [    0.01 us] [BUS]   state -> IDLE
+#   [CHK] PASS - busy/done deasserted
+# 
+# ---- TEST 1: WRITE - correct address ----
+#   [    0.43 us] [BUS]   state -> START
+#   [    5.21 us] [SLAVE] START detected
+#   [   10.21 us] [BUS]   state -> SEND_ADDR
+#   [   90.21 us] [SLAVE] addr 0x50 matched, RW=WRITE -> ACK
+#   [   90.21 us] [BUS]   state -> ADDR_ACK
+#   [  100.21 us] [BUS]   state -> WRITE_DATA
+#   [  180.21 us] [SLAVE] data received = 0xa5 -> ACK
+#   [  180.21 us] [BUS]   state -> DATA_ACK
+#   [  190.21 us] [BUS]   state -> STOP
+#   [  200.21 us] [BUS]   state -> DONE
+#   [  200.21 us] [SLAVE] STOP detected
+#   [  200.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - no ack_error
+#   [CHK] PASS - slave received 0xA5
+# 
+# ---- TEST 2: READ - correct address ----
+#   [  200.29 us] [BUS]   state -> START
+#   [  205.21 us] [SLAVE] START detected
+#   [  210.21 us] [BUS]   state -> SEND_ADDR
+#   [  290.21 us] [SLAVE] addr 0x50 matched, RW=READ -> ACK
+#   [  290.21 us] [BUS]   state -> ADDR_ACK
+#   [  300.21 us] [BUS]   state -> READ_DATA
+#   [  380.21 us] [BUS]   state -> MASTER_ACK
+#   [  385.21 us] [SLAVE] data 0x3c sent, master replied NACK
+#   [  390.21 us] [BUS]   state -> STOP
+#   [  400.21 us] [BUS]   state -> DONE
+#   [  400.21 us] [SLAVE] STOP detected
+#   [  400.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - no ack_error
+#   [CHK] PASS - rx_data == 0x3C
+# 
+# ---- TEST 3: WRITE - MSB-first bit order ----
+#   [  400.29 us] [BUS]   state -> START
+#   [  405.21 us] [SLAVE] START detected
+#   [  410.21 us] [BUS]   state -> SEND_ADDR
+#   [  490.21 us] [SLAVE] addr 0x50 matched, RW=WRITE -> ACK
+#   [  490.21 us] [BUS]   state -> ADDR_ACK
+#   [  500.21 us] [BUS]   state -> WRITE_DATA
+#   [  580.21 us] [SLAVE] data received = 0xa5 -> ACK
+#   [  580.21 us] [BUS]   state -> DATA_ACK
+#   [  590.21 us] [BUS]   state -> STOP
+#   [  600.21 us] [BUS]   state -> DONE
+#   [  600.21 us] [SLAVE] STOP detected
+#   [  600.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - byte stored exactly (10100101)
+# 
+# ---- TEST 4: WRITE - wrong address (expect NACK) ----
+#   [  600.29 us] [BUS]   state -> START
+#   [  605.21 us] [SLAVE] START detected
+#   [  610.21 us] [BUS]   state -> SEND_ADDR
+#   [  690.21 us] [SLAVE] addr 0x51 NOT matched (expected 0x50) -> NACK
+#   [  690.21 us] [BUS]   state -> ADDR_ACK
+#   [  700.21 us] [BUS]   state -> STOP
+#   [  710.21 us] [BUS]   state -> DONE
+#   [  710.21 us] [SLAVE] STOP detected
+#   [  710.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - ack_error set (NACK)
+#   [CHK] PASS - slave did not match/ACK
+# 
+# ---- TEST 5: multiple WRITEs ----
+#   [  710.29 us] [BUS]   state -> START
+#   [  715.21 us] [SLAVE] START detected
+#   [  720.21 us] [BUS]   state -> SEND_ADDR
+#   [  800.21 us] [SLAVE] addr 0x50 matched, RW=WRITE -> ACK
+#   [  800.21 us] [BUS]   state -> ADDR_ACK
+#   [  810.21 us] [BUS]   state -> WRITE_DATA
+#   [  890.21 us] [SLAVE] data received = 0x00 -> ACK
+#   [  890.21 us] [BUS]   state -> DATA_ACK
+#   [  900.21 us] [BUS]   state -> STOP
+#   [  910.21 us] [BUS]   state -> DONE
+#   [  910.21 us] [SLAVE] STOP detected
+#   [  910.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - 0x00
+#   [  910.29 us] [BUS]   state -> START
+#   [  915.21 us] [SLAVE] START detected
+#   [  920.21 us] [BUS]   state -> SEND_ADDR
+#   [ 1000.21 us] [SLAVE] addr 0x50 matched, RW=WRITE -> ACK
+#   [ 1000.21 us] [BUS]   state -> ADDR_ACK
+#   [ 1010.21 us] [BUS]   state -> WRITE_DATA
+#   [ 1090.21 us] [SLAVE] data received = 0xff -> ACK
+#   [ 1090.21 us] [BUS]   state -> DATA_ACK
+#   [ 1100.21 us] [BUS]   state -> STOP
+#   [ 1110.21 us] [BUS]   state -> DONE
+#   [ 1110.21 us] [SLAVE] STOP detected
+#   [ 1110.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - 0xFF
+#   [ 1110.29 us] [BUS]   state -> START
+#   [ 1115.21 us] [SLAVE] START detected
+#   [ 1120.21 us] [BUS]   state -> SEND_ADDR
+#   [ 1200.21 us] [SLAVE] addr 0x50 matched, RW=WRITE -> ACK
+#   [ 1200.21 us] [BUS]   state -> ADDR_ACK
+#   [ 1210.21 us] [BUS]   state -> WRITE_DATA
+#   [ 1290.21 us] [SLAVE] data received = 0x55 -> ACK
+#   [ 1290.21 us] [BUS]   state -> DATA_ACK
+#   [ 1300.21 us] [BUS]   state -> STOP
+#   [ 1310.21 us] [BUS]   state -> DONE
+#   [ 1310.21 us] [SLAVE] STOP detected
+#   [ 1310.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - 0x55
+# 
+# ---- TEST 6: multiple READs (stable value) ----
+#   [ 1310.29 us] [BUS]   state -> START
+#   [ 1315.21 us] [SLAVE] START detected
+#   [ 1320.21 us] [BUS]   state -> SEND_ADDR
+#   [ 1400.21 us] [SLAVE] addr 0x50 matched, RW=READ -> ACK
+#   [ 1400.21 us] [BUS]   state -> ADDR_ACK
+#   [ 1410.21 us] [BUS]   state -> READ_DATA
+#   [ 1490.21 us] [BUS]   state -> MASTER_ACK
+#   [ 1495.21 us] [SLAVE] data 0x66 sent, master replied NACK
+#   [ 1500.21 us] [BUS]   state -> STOP
+#   [ 1510.21 us] [BUS]   state -> DONE
+#   [ 1510.21 us] [SLAVE] STOP detected
+#   [ 1510.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - first read == 0x66
+#   [ 1510.29 us] [BUS]   state -> START
+#   [ 1515.21 us] [SLAVE] START detected
+#   [ 1520.21 us] [BUS]   state -> SEND_ADDR
+#   [ 1600.21 us] [SLAVE] addr 0x50 matched, RW=READ -> ACK
+#   [ 1600.21 us] [BUS]   state -> ADDR_ACK
+#   [ 1610.21 us] [BUS]   state -> READ_DATA
+#   [ 1690.21 us] [BUS]   state -> MASTER_ACK
+#   [ 1695.21 us] [SLAVE] data 0x66 sent, master replied NACK
+#   [ 1700.21 us] [BUS]   state -> STOP
+#   [ 1710.21 us] [BUS]   state -> DONE
+#   [ 1710.21 us] [SLAVE] STOP detected
+#   [ 1710.23 us] [BUS]   state -> IDLE
+#   [CHK] PASS - repeat read == 0x66
+# 
+# ---- TEST 7: single-byte read always ends in master NACK (by design) ----
+#   [CHK] PASS - see master-replied NACK in the SLAVE log above
+# 
+# ========================================
+# I2C MASTER VERIFICATION SUMMARY
+# ========================================
+# TOTAL TESTS : 14
+# PASSED      : 14
+# FAILED      : 0
+# ========================================
+# ALL TESTS PASSED
+# ========================================
+# ** Note: $finish    : i2c_master_tb.sv(327)
+#    Time: 1710250 ns  Iteration: 1  Instance: /i2c_master_tb

@@ -1,0 +1,498 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /\apb_i2c_tb#DUT 
+=== Design Unit: work.apb_i2c_regs
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        38        38         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\apb_i2c_tb#DUT 
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File apb_i2c_regs.sv
+------------------------------------CASE Branch------------------------------------
+    101                                     2766     Count coming in to CASE
+    102             1                        271                 ADDR_CTRL,
+    103             1                        259                 ADDR_STATUS,
+    104             1                        291                 ADDR_SLAVE_ADDR,
+    105             1                        271                 ADDR_TX_DATA,
+    106             1                        299                 ADDR_RX_DATA,
+    107             1                        284                 ADDR_CLK_DIV,
+    108             1                        281                 ADDR_INT_STATUS,
+    109             1                        258                 ADDR_VERSION:
+    112             1                        552                 default:
+Branch totals: 9 hits of 9 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    131                                     7508     Count coming in to IF
+    131             1                          2             if (!PRESETn) begin
+    142             1                       7506             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    147                                     7506     Count coming in to IF
+    147             1                       3768                 if (master_done) begin
+                                            3738     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    154                                     7506     Count coming in to IF
+    154             1                       1226                 if (apb_write && valid_address) begin
+                                            6280     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    155                                     1226     Count coming in to CASE
+    157             1                        144                         ADDR_CTRL: begin
+    170             1                        159                         ADDR_SLAVE_ADDR: begin
+    174             1                        151                         ADDR_TX_DATA: begin
+    178             1                        158                         ADDR_CLK_DIV: begin
+    185             1                        145                         ADDR_STATUS,
+    186             1                        180                         ADDR_RX_DATA,
+    187             1                        156                         ADDR_INT_STATUS,
+    188             1                        133                         ADDR_VERSION: begin
+Branch totals: 8 hits of 8 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    163                                      144     Count coming in to IF
+    163             1                         39                             if (PWDATA[0] && !master_busy) begin
+                                             105     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    180                                      158     Count coming in to IF
+    180             1                        157                             if (PWDATA != 32'd0)
+                                               1     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    206                                     9091     Count coming in to IF
+    206             1                       2822             if (apb_read) begin
+                                            6269     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    207                                     2822     Count coming in to CASE
+    209             1                        279                     ADDR_CTRL: begin
+    213             1                        263                     ADDR_STATUS: begin
+    224             1                        284                     ADDR_SLAVE_ADDR: begin
+    228             1                        284                     ADDR_TX_DATA: begin
+    232             1                        301                     ADDR_RX_DATA: begin
+    236             1                        282                     ADDR_CLK_DIV: begin
+    240             1                        314                     ADDR_INT_STATUS: begin
+    248             1                        289                     ADDR_VERSION: begin
+    252             1                        526                     default: begin
+Branch totals: 9 hits of 9 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       5         5         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /\apb_i2c_tb#DUT  --
+
+  File apb_i2c_regs.sv
+----------------Focused Condition View-------------------
+Line       154 Item    1  (apb_write && valid_address)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+      apb_write         Y
+  valid_address         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  apb_write_0           -                             
+  Row   2:          1  apb_write_1           valid_address                 
+  Row   3:          1  valid_address_0       apb_write                     
+  Row   4:          1  valid_address_1       apb_write                     
+
+----------------Focused Condition View-------------------
+Line       163 Item    1  (PWDATA[0] && ~master_busy)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+    PWDATA[0]         Y
+  master_busy         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  PWDATA[0]_0           -                             
+  Row   2:          1  PWDATA[0]_1           ~master_busy                  
+  Row   3:          1  master_busy_0         PWDATA[0]                     
+  Row   4:          1  master_busy_1         PWDATA[0]                     
+
+----------------Focused Condition View-------------------
+Line       180 Item    1  (PWDATA != 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  (PWDATA != 0)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (PWDATA != 0)_0       -                             
+  Row   2:          1  (PWDATA != 0)_1       -                             
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      8         8         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /\apb_i2c_tb#DUT  --
+
+  File apb_i2c_regs.sv
+----------------Focused Expression View-----------------
+Line       96 Item    1  (PSEL && PENABLE)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+        PSEL         Y
+     PENABLE         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  PSEL_0                -                             
+  Row   2:          1  PSEL_1                PENABLE                       
+  Row   3:          1  PENABLE_0             PSEL                          
+  Row   4:          1  PENABLE_1             PSEL                          
+
+----------------Focused Expression View-----------------
+Line       97 Item    1  (apb_access && PWRITE)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  apb_access         Y
+      PWRITE         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  apb_access_0          -                             
+  Row   2:          1  apb_access_1          PWRITE                        
+  Row   3:          1  PWRITE_0              apb_access                    
+  Row   4:          1  PWRITE_1              apb_access                    
+
+----------------Focused Expression View-----------------
+Line       98 Item    1  (apb_access && ~PWRITE)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+  apb_access         Y
+      PWRITE         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  apb_access_0          -                             
+  Row   2:          1  apb_access_1          ~PWRITE                       
+  Row   3:          1  PWRITE_0              apb_access                    
+  Row   4:          1  PWRITE_1              apb_access                    
+
+----------------Focused Expression View-----------------
+Line       117 Item    1  (apb_access && ~valid_address)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+     apb_access         Y
+  valid_address         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  apb_access_0          -                             
+  Row   2:          1  apb_access_1          ~valid_address                
+  Row   3:          1  valid_address_0       apb_access                    
+  Row   4:          1  valid_address_1       apb_access                    
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      38        38         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\apb_i2c_tb#DUT  --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File apb_i2c_regs.sv
+    42                                               module apb_i2c_regs #(
+    43                                                   parameter [31:0] CLK_DIV_DEFAULT = 32'd250,
+    44                                                   parameter [31:0] VERSION_VALUE    = 32'h0001_0000
+    45                                               ) (
+    46                                                   // APB interface
+    47                                                   input        PCLK,
+    48                                                   input        PRESETn,
+    49                                                   input [11:0] PADDR,
+    50                                                   input        PSEL,
+    51                                                   input        PENABLE,
+    52                                                   input        PWRITE,
+    53                                                   input [31:0] PWDATA,
+    54                                               
+    55                                                   output reg [31:0] PRDATA,
+    56                                                   output       PREADY,
+    57                                                   output       PSLVERR,
+    58                                               
+    59                                                   // I2C master control
+    60                                                   output reg     master_start,
+    61                                                   output reg     master_rw,
+    62                                                   output reg [6:0] master_slave_addr,
+    63                                                   output reg [7:0] master_tx_data,
+    64                                                   output reg [31:0] master_clk_div,
+    65                                               
+    66                                                   // I2C master/status inputs
+    67                                                   input        master_busy,
+    68                                                   input        master_done,
+    69                                                   input        master_ack_error,
+    70                                                   input        master_bus_error,
+    71                                                   input        i2c_bus_busy,
+    72                                                   input [7:0]  master_rx_data
+    73                                               );
+    74                                               
+    75                                                   // -------------------------------------------------------------------------
+    76                                                   // Register addresses
+    77                                                   // -------------------------------------------------------------------------
+    78                                                   localparam [11:0] ADDR_CTRL       = 12'h000;
+    79                                                   localparam [11:0] ADDR_STATUS     = 12'h004;
+    80                                                   localparam [11:0] ADDR_SLAVE_ADDR = 12'h008;
+    81                                                   localparam [11:0] ADDR_TX_DATA    = 12'h00C;
+    82                                                   localparam [11:0] ADDR_RX_DATA    = 12'h010;
+    83                                                   localparam [11:0] ADDR_CLK_DIV    = 12'h014;
+    84                                                   localparam [11:0] ADDR_INT_STATUS = 12'h018;
+    85                                                   localparam [11:0] ADDR_VERSION    = 12'h01C;
+    86                                               
+    87                                                   // -------------------------------------------------------------------------
+    88                                                   // APB access signals
+    89                                                   // -------------------------------------------------------------------------
+    90                                                   wire apb_access;
+    91                                                   wire apb_write;
+    92                                                   wire apb_read;
+    93                                                   reg  valid_address;
+    94                                               
+    95                                                   assign PREADY     = 1'b1;
+    96              1                       9007         assign apb_access = PSEL && PENABLE;
+    97              1                       7542         assign apb_write  = apb_access && PWRITE;
+    98              1                       7542         assign apb_read   = apb_access && !PWRITE;
+    99                                               
+    100             1                       2766         always @(*) begin
+    101                                                      case (PADDR)
+    102                                                          ADDR_CTRL,
+    103                                                          ADDR_STATUS,
+    104                                                          ADDR_SLAVE_ADDR,
+    105                                                          ADDR_TX_DATA,
+    106                                                          ADDR_RX_DATA,
+    107                                                          ADDR_CLK_DIV,
+    108                                                          ADDR_INT_STATUS,
+    109                                                          ADDR_VERSION:
+    110             1                       2214                     valid_address = 1'b1;
+    111                                              
+    112                                                          default:
+    113             1                        552                     valid_address = 1'b0;
+    114                                                      endcase
+    115                                                  end
+    116                                              
+    117             1                       6886         assign PSLVERR = apb_access && !valid_address;
+    118                                              
+    119                                                  // -------------------------------------------------------------------------
+    120                                                  // Internal registers
+    121                                                  // -------------------------------------------------------------------------    reg        master_start;    reg        master_rw;    reg [6:0]  master_slave_addr;    reg [7:0]  master_tx_data;    reg [31:0] master_clk_div;
+    122                                              
+    123                                                  reg        done_status;
+    124                                                  reg        ack_error_status;
+    125                                                  reg [7:0]  rx_data_reg;
+    126                                              
+    127                                                  // -------------------------------------------------------------------------
+    128                                                  // Register write / status logic
+    129                                                  // -------------------------------------------------------------------------
+    130             1                       7508         always @(posedge PCLK or negedge PRESETn) begin
+    131                                                      if (!PRESETn) begin
+    132             1                          2                 master_start      <= 1'b0;
+    133             1                          2                 master_rw         <= 1'b0;
+    134             1                          2                 master_slave_addr <= 7'h00;
+    135             1                          2                 master_tx_data    <= 8'h00;
+    136             1                          2                 master_clk_div    <= CLK_DIV_DEFAULT;
+    137                                              
+    138             1                          2                 done_status       <= 1'b0;
+    139             1                          2                 ack_error_status  <= 1'b0;
+    140             1                          2                 rx_data_reg       <= 8'h00;
+    141                                                      end
+    142                                                      else begin
+    143                                                          // START is a command and therefore only lasts one PCLK cycle.
+    144             1                       7506                 master_start <= 1'b0;
+    145                                              
+    146                                                          // Capture I2C completion information.
+    147                                                          if (master_done) begin
+    148             1                       3768                     done_status      <= 1'b1;
+    149             1                       3768                     ack_error_status <= master_ack_error;
+    150             1                       3768                     rx_data_reg      <= master_rx_data;
+    151                                                          end
+    152                                              
+    153                                                          // APB writes occur during the ACCESS phase.
+    154                                                          if (apb_write && valid_address) begin
+    155                                                              case (PADDR)
+    156                                              
+    157                                                                  ADDR_CTRL: begin
+    158                                                                      // RW is a persistent configuration bit.
+    159             1                        144                             master_rw <= PWDATA[1];
+    160                                              
+    161                                                                      // START is a one-cycle command.
+    162                                                                      // Do not start a transaction while master is busy.
+    163                                                                      if (PWDATA[0] && !master_busy) begin
+    164             1                         39                                 master_start      <= 1'b1;
+    165             1                         39                                 done_status       <= 1'b0;
+    166             1                         39                                 ack_error_status  <= 1'b0;
+    167                                                                      end
+    168                                                                  end
+    169                                              
+    170                                                                  ADDR_SLAVE_ADDR: begin
+    171             1                        159                             master_slave_addr <= PWDATA[6:0];
+    172                                                                  end
+    173                                              
+    174                                                                  ADDR_TX_DATA: begin
+    175             1                        151                             master_tx_data <= PWDATA[7:0];
+    176                                                                  end
+    177                                              
+    178                                                                  ADDR_CLK_DIV: begin
+    179                                                                      // Zero is not a useful divider value.
+    180                                                                      if (PWDATA != 32'd0)
+    181             1                        157                                 master_clk_div <= PWDATA;
+    182                                                                  end
+    183                                              
+    184                                                                  // Read-only/status registers.
+    185                                                                  ADDR_STATUS,
+    186                                                                  ADDR_RX_DATA,
+    187                                                                  ADDR_INT_STATUS,
+    188                                                                  ADDR_VERSION: begin
+    189                                                                      // No action.
+    190                                                                  end
+    191                                              
+    192                                                                  default: begin
+    193                                                                      // Invalid addresses are handled by PSLVERR.
+    194                                                                  end
+    195                                                              endcase
+    196                                                          end
+    197                                                      end
+    198                                                  end
+    199                                              
+    200                                                  // -------------------------------------------------------------------------
+    201                                                  // APB read mux
+    202                                                  // -------------------------------------------------------------------------
+    203             1                       9091         always @(*) begin
+    204             1                       9091             PRDATA = 32'h0000_0000;
+    205                                              
+    206                                                      if (apb_read) begin
+    207                                                          case (PADDR)
+    208                                              
+    209                                                              ADDR_CTRL: begin
+    210             1                        279                         PRDATA = {30'h0, master_rw, 1'b0};
+    211                                                              end
+    212                                              
+    213                                                              ADDR_STATUS: begin
+    214             1                        263                         PRDATA = {
+    215                                                                      27'h0,
+    216                                                                      i2c_bus_busy,
+    217                                                                      master_bus_error,
+    218                                                                      ack_error_status,
+    219                                                                      done_status,
+    220                                                                      master_busy
+    221                                                                  };
+    222                                                              end
+    223                                              
+    224                                                              ADDR_SLAVE_ADDR: begin
+    225             1                        284                         PRDATA = {25'h0, master_slave_addr};
+    226                                                              end
+    227                                              
+    228                                                              ADDR_TX_DATA: begin
+    229             1                        284                         PRDATA = {24'h0, master_tx_data};
+    230                                                              end
+    231                                              
+    232                                                              ADDR_RX_DATA: begin
+    233             1                        301                         PRDATA = {24'h0, rx_data_reg};
+    234                                                              end
+    235                                              
+    236                                                              ADDR_CLK_DIV: begin
+    237             1                        282                         PRDATA = master_clk_div;
+    238                                                              end
+    239                                              
+    240                                                              ADDR_INT_STATUS: begin
+    241             1                        314                         PRDATA = {
+    242                                                                      30'h0,
+    243                                                                      ack_error_status,
+    244                                                                      done_status
+    245                                                                  };
+    246                                                              end
+    247                                              
+    248                                                              ADDR_VERSION: begin
+    249             1                        289                         PRDATA = VERSION_VALUE;
+    250                                                              end
+    251                                              
+    252                                                              default: begin
+    253             1                        526                         PRDATA = 32'h0000_0000;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        318       315         3    99.05%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\apb_i2c_tb#DUT  --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                       PADDR[0-11]           1           1      100.00 
+                                              PCLK           1           1      100.00 
+                                           PENABLE           1           1      100.00 
+                                      PRDATA[31-0]           1           1      100.00 
+                                            PREADY           0           0        0.00 
+                                           PRESETn           0           1       50.00 
+                                              PSEL           1           1      100.00 
+                                           PSLVERR           1           1      100.00 
+                                      PWDATA[0-31]           1           1      100.00 
+                                            PWRITE           1           1      100.00 
+                                  ack_error_status           1           1      100.00 
+                                        apb_access           1           1      100.00 
+                                          apb_read           1           1      100.00 
+                                         apb_write           1           1      100.00 
+                                       done_status           1           1      100.00 
+                                      i2c_bus_busy           1           1      100.00 
+                                  master_ack_error           1           1      100.00 
+                                  master_bus_error           1           1      100.00 
+                                       master_busy           1           1      100.00 
+                              master_clk_div[31-0]           1           1      100.00 
+                                       master_done           1           1      100.00 
+                                         master_rw           1           1      100.00 
+                               master_rx_data[0-7]           1           1      100.00 
+                            master_slave_addr[6-0]           1           1      100.00 
+                                      master_start           1           1      100.00 
+                               master_tx_data[7-0]           1           1      100.00 
+                                  rx_data_reg[7-0]           1           1      100.00 
+                                     valid_address           1           1      100.00 
+
+Total Node Count     =        159 
+Toggled Node Count   =        157 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      99.05% (315 of 318 bins)
+
+
+Total Coverage By Instance (filtered view): 99.81%
+
